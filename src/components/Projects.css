@@ -1,0 +1,201 @@
+body {
+    background-color: #1c1c1c;
+    font-family: Arial, sans-serif;
+    color: #fff;
+}
+
+/* Projects Section */
+.projects-container {
+    padding: 50px;
+    background-color: #1c1c1c;
+    text-align: center;
+    margin-bottom: 300px;
+}
+
+.projects-heading {
+    font-size: 36px;
+    margin-bottom: 30px;
+    color: #f39c12;
+}
+
+.project-grid {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    gap: 20px;
+}
+
+.project-card {
+    background-color: #333;
+    border-radius: 8px;
+    padding: 20px;
+    width: 300px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    text-align: center;
+    cursor: pointer;
+}
+
+.project-card:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 20px rgba(243, 156, 18, 0.6), 0 0 40px rgba(243, 156, 18, 0.6);
+}
+
+.project-card img {
+    width: 100%; /* Scale images to fill container */
+    max-width: 350px; /* Increase image size by max width */
+    height: auto;
+    border-radius: 8px;
+    transition: transform 0.3s ease-in-out; /* Smooth hover scaling effect */
+}
+
+.project-card img:hover {
+    transform: scale(1.05); /* Slightly scale image on hover */
+    cursor: pointer;
+}
+
+/* Modal for displaying larger images */
+.modal-project-card {
+    background-color: #333;
+    border-radius: 8px;
+    padding: 20px;
+    text-align: center;
+}
+
+/* Modal Title */
+.modal-title {
+    font-size: 24px;
+    color: #f39c12;
+    margin-bottom: 10px;
+}
+
+/* Modal Image */
+.modal-image {
+    width: 80%; /* Larger image width */
+    max-width: 800px; /* Set max width to ensure images don’t get too big */
+    height: auto;
+    border-radius: 10px;
+    margin: 0 auto;
+    transition: transform 0.3s ease-in-out; /* Smooth transition for zoom effect */
+}
+
+/* Modal Image Hover Effect */
+.modal-image:hover {
+    transform: scale(1.1); /* Scale the image slightly when hovered */
+    box-shadow: 0 0 20px rgba(243, 156, 18, 0.8), 0 0 40px rgba(243, 156, 18, 0.6);
+    cursor: pointer;
+}
+
+/* Modal Images Side by Side */
+.modal-images {
+    display: flex;
+    gap: 10px;
+    justify-content: center;
+    margin-bottom: 20px;
+}
+
+.modal-image-side-by-side {
+    width: 48%;
+    max-width: 400px;
+    height: auto;
+    border-radius: 10px;
+    margin: 0 10px;
+    transition: transform 0.3s ease-in-out;
+}
+
+/* Side-by-Side Image Hover Effect */
+.modal-image-side-by-side:hover {
+    transform: scale(1.1);
+    box-shadow: 0 0 15px rgba(243, 156, 18, 0.8), 0 0 30px rgba(243, 156, 18, 0.6);
+    cursor: pointer;
+}
+
+/* Modal Description */
+.modal-description {
+    font-size: 16px;
+    color: #e0e0e0;
+    margin-bottom: 10px;
+}
+
+/* Click-to-View Text */
+.click-to-view {
+    font-size: 14px;
+    color: #f39c12;
+    margin-top: 10px;
+}
+
+/* Technologies Used in Modal */
+.technologies-used {
+    font-size: 16px;
+    color: #e0e0e0;
+    margin-top: 5px;
+}
+
+.technologies-list {
+    color: #f39c12;
+}
+
+/* Modal Buttons */
+.modal-buttons {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px;
+}
+
+.button-link {
+    display: inline-block;
+    padding: 10px 15px;
+    background-color: #f39c12;
+    border-radius: 5px;
+    color: #fff;
+    text-decoration: none;
+    font-weight: bold;
+    position: relative;
+    transition: background-color 0.3s ease, box-shadow 0.3s ease, color 0.3s ease;
+}
+
+.button-link:hover {
+    background-color: #e67e22;
+    box-shadow: 0 0 15px rgba(243, 156, 18, 0.8), 0 0 30px rgba(243, 156, 18, 0.6);
+}
+
+/* Close Button */
+button {
+    padding: 10px 15px;
+    background-color: #00ffcc;
+    border: none;
+    border-radius: 5px;
+    color: #1c1c1c;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+button:hover {
+    background-color: #1abc9c;
+    box-shadow: 0 0 15px rgba(0, 255, 204, 0.8), 0 0 30px rgba(0, 255, 204, 0.6);
+}
+
+/* Modal Overlay */
+.ReactModal__Overlay {
+    background-color: rgba(0, 0, 0, 0.75);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.modal-content {
+    max-width: 600px;
+    margin: auto;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+/* Divider for description */
+.description-divider {
+    margin: 20px 0;
+    border: none;
+    height: 2px;
+    background-color: #f39c12;
+}

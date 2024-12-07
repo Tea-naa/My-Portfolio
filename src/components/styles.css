@@ -1,0 +1,77 @@
+body {
+    background-color: #1c1c1c; /* Dark grey background */
+    color: #e0e0e0; /* Light grey text for contrast */
+    font-family: 'Arial', sans-serif; /* Modern font */
+    margin: 0;
+    padding: 0;
+    transition: background-color 0.5s ease, color 0.5s ease; /* Smooth transition */
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh; /* Ensure full height */
+}
+#root {
+    flex-grow: 1; /* Grow to fill remaining space */
+}
+
+html, body {
+    margin: 0;
+    padding: 0;
+    height: 100%; /* Ensure the body takes full height */
+}
+
+h1, h2, h3 {
+    color: #f0f0f0; /* Light grey for headings */
+    text-shadow: 0 0 10px #333; /* Slight glow */
+    margin-top: 0; /* Remove top margin from headers */
+}
+
+a {
+    color: #00ffcc; /* Neon teal for links */
+    transition: color 0.3s ease, text-shadow 0.3s ease, transform 0.3s ease;
+}
+
+a:hover {
+    color: #00ffff; /* Brighter teal on hover */
+    text-shadow: 0 0 10px #00ffcc, 0 0 15px #00ffff; /* Glow effect on hover */
+    transform: scale(1.1); /* Slight zoom */
+}
+
+button {
+    background-color: #2c3e50; /* Dark blue-grey */
+    color: #ecf0f1; /* Light grey text */
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    padding: 10px 20px;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+button:hover {
+    background-color: #34495e; /* Darker blue-grey */
+    transform: scale(1.1); /* Slight zoom */
+}
+
+.glow {
+    text-shadow: 0 0 10px #666, 0 0 15px #999; /* Stronger glow */
+}
+
+html {
+    scroll-behavior: smooth; /* Enable smooth scrolling */
+}
+
+nav {
+    position: fixed; /* Fix the navbar at the top */
+    top: 0;
+    width: 100%; /* Ensure the navbar spans the full width */
+    z-index: 1000; /* Make sure it stays on top */
+    background-color: #1c1c1c; /* Same background color as body */
+    padding: 15px;
+}
+
+.container {
+    padding-top: 80px; /* Add padding to the top to avoid overlap with the fixed navbar */
+}
+
+footer {
+    margin-top: auto; /* Push the footer to the bottom */
+}

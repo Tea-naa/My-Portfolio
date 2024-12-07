@@ -1,0 +1,72 @@
+/* src/components/Navbar.css */
+.navbar {
+    position: fixed;
+    width: 100%;
+    top: 0;
+    background-color: #1c1c1c;
+    padding: 15px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 2px solid #333;
+    z-index: 999;
+    font-family: 'Arial', sans-serif; /* New font */
+}
+
+.navbar-container {
+    display: flex;
+    align-items: center;
+}
+
+.navbar-toggle {
+    display: none; /* Hidden by default */
+    flex-direction: column;
+    cursor: pointer;
+}
+
+.bar {
+    width: 25px;
+    height: 3px;
+    background-color: #e0e0e0;
+    margin: 3px 0;
+    transition: 0.3s;
+}
+
+.navbar-links {
+    display: flex;
+    gap: 30px;
+}
+
+.navbar-link {
+    color: #e0e0e0;
+    font-size: 18px;
+    text-decoration: none;
+    transition: color 0.3s ease, transform 0.3s ease;
+    font-family: 'Arial', sans-serif; /* Ensures the link text has the new font */
+}
+
+.navbar-link:hover {
+    color: #f39c12;
+    transform: scale(1.05);
+}
+
+/* Media Query for mobile screens */
+@media (max-width: 768px) {
+    .navbar-links {
+        display: none; /* Hidden by default */
+        flex-direction: column;
+        width: 100%; /* Full width */
+        position: absolute; /* Position absolute for dropdown */
+        top: 60px; /* Adjust to your navbar height */
+        left: 0;
+        background-color: #1c1c1c;
+    }
+
+    .navbar-links.active {
+        display: flex; /* Show links when toggled */
+    }
+
+    .navbar-toggle {
+        display: flex; /* Show hamburger icon on mobile */
+    }
+}

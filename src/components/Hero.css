@@ -1,0 +1,53 @@
+.hero-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    min-height: 70vh; /* Reduce height to 70% of the viewport */
+    background-color: #1c1c1c; 
+    color: #fff;
+}
+
+/* Base styles for hero title and subtitle */
+.hero-title {
+    font-size: 5em; /* Huge font size for larger screens */
+    margin: 0;
+    font-family: 'Helvetica', sans-serif; /* Modern font */
+}
+
+.hero-subtitle {
+    font-size: 5.5em; /* Increased font size */
+    margin-top: 10px;
+    opacity: 0; /* Start invisible */
+    animation: fadeIn 0.5s forwards; /* Fade-in animation */
+}
+
+.highlight {
+    color: white; /* White color for emphasis */
+    font-weight: bold;
+}
+
+.glow {
+    text-shadow: 0 0 5px rgba(0, 255, 255, 0.8), 0 0 5px rgba(0, 255, 255, 0.8); /* White glow effect */
+}
+
+.light-grey {
+    color: #d3d3d3; /* Light grey color */
+}
+
+/* Media Queries for responsive design */
+@media (max-width: 768px) {
+    .hero-title {
+        font-size: 2.5em; /* Normal font size for tablets and mobile */
+    }
+
+    .hero-subtitle {
+        font-size: 2em; /* Normal font size for tablets and mobile */
+    }
+}
+
+@keyframes fadeIn {
+    to {
+        opacity: 1; /* Fade to visible */
+    }
+}
