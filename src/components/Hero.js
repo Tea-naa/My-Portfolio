@@ -30,11 +30,14 @@ const Hero = () => {
         return () => clearTimeout(timer);
     }, [text, isDeleting, index]);
 
+    // Conditional article for "innovator"
+    const article = roles[index] === 'innovator' ? 'an' : 'a';
+
     return (
         <div className="hero-container">
             <h1 className="hero-title light-grey">Hi, I'm Tina</h1>
             <h2 className="hero-subtitle">
-                I'm a <span className="highlight glow">{text}</span>.
+                I'm <span className="highlight glow">{article} {text}</span>.
             </h2>
         </div>
     );

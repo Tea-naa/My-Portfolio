@@ -33,6 +33,7 @@ body {
     transition: transform 0.3s ease, box-shadow 0.3s ease;
     text-align: center;
     cursor: pointer;
+    margin-bottom: 20px; /* Added margin to prevent overlap on smaller screens */
 }
 
 .project-card:hover {
@@ -59,9 +60,9 @@ body {
     border-radius: 8px;
     padding: 20px;
     text-align: center;
+    position: relative;
 }
 
-/* Modal Title */
 .modal-title {
     font-size: 24px;
     color: #f39c12;
@@ -183,6 +184,7 @@ button:hover {
     justify-content: center;
 }
 
+/* Adjusting the modal for responsiveness */
 .modal-content {
     max-width: 600px;
     margin: auto;
@@ -198,4 +200,84 @@ button:hover {
     border: none;
     height: 2px;
     background-color: #f39c12;
+}
+
+/* Responsive Design for smaller screens */
+@media (max-width: 768px) {
+    .projects-container {
+        padding: 20px;
+    }
+
+    .projects-heading {
+        font-size: 28px;
+    }
+
+    .project-card {
+        width: 100%;
+        margin-bottom: 20px;
+    }
+
+    .project-grid {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .modal-image {
+        width: 90%;
+    }
+
+    .modal-image-side-by-side {
+        width: 100%;
+    }
+
+    .modal-title {
+        font-size: 20px;
+    }
+
+    .modal-description {
+        font-size: 14px;
+    }
+
+    .technologies-used {
+        font-size: 14px;
+    }
+
+    .button-link {
+        padding: 8px 12px;
+        font-size: 14px;
+    }
+
+    button {
+        padding: 8px 12px;
+        font-size: 14px;
+    }
+}
+
+@media (max-width: 480px) {
+    .projects-heading {
+        font-size: 24px;
+    }
+
+    .project-card {
+        width: 100%;
+        padding: 15px;
+    }
+
+    .modal-title {
+        font-size: 18px;
+    }
+
+    .modal-description {
+        font-size: 12px;
+    }
+
+    .button-link {
+        padding: 6px 10px;
+        font-size: 12px;
+    }
+
+    button {
+        padding: 6px 10px;
+        font-size: 12px;
+    }
 }

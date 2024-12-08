@@ -1,11 +1,16 @@
 import React from 'react';
-import './Contact.css'; // Import your CSS file
+import './Contact.css';
 
 const Contact = () => {
     return (
         <div className="contact-container">
             <h2 className="contact-heading">Contact Me</h2>
-            <form action="mailto:TinaMarie.Bajwa@gmail.com" method="post" encType="text/plain" className="contact-form">
+            <form 
+                action="mailto:TinaMarie.Bajwa@gmail.com" 
+                method="post" 
+                encType="text/plain" 
+                className="contact-form"
+            >
                 <div className="input-group">
                     <label htmlFor="name" className="label">Name:</label>
                     <input

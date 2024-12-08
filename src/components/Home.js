@@ -1,8 +1,8 @@
 import React, { useState } from 'react';
-import Hero from '../components/Hero.js'; 
+import Hero from './Hero.js'; 
 import { Link } from 'react-router-dom';
 import profile from '../profile.jpg';
-
+import './Home.css';  
 
 const Home = () => {
     const [isHovered, setIsHovered] = useState(false);
@@ -11,25 +11,37 @@ const Home = () => {
         <div style={styles.pageContainer}>
             <div style={styles.container}>
                 <Hero />
-                <img src={profile} alt="Tina" style={styles.profilePic} />
+                {/* Profile Image Section */}
+                <div className="profile-image-container">
+                    <img 
+                        src={profile} 
+                        alt="Tina" 
+                        className={`profile-image ${isHovered ? 'profile-image-hover' : ''}`} 
+                        onMouseEnter={() => setIsHovered(true)} 
+                        onMouseLeave={() => setIsHovered(false)}
+                    />
+                    <div className={`profile-hover ${isHovered ? 'profile-hover-visible' : ''}`}>
+                        <p>Full Stack Developer | Tech Enthusiast | Lifelong Learner</p>
+                    </div>
+                </div>
+
                 <h1 className="animate__animated animate__fadeInDown" style={styles.heading}>
                     Welcome to My Portfolio!
                 </h1>
                 <p style={styles.paragraph}>
-                Welcome! I am a passionate full-stack developer dedicated to crafting dynamic, user-friendly web applications. With expertise in JavaScript, React, Node.js, and Express, I thrive on building innovative solutions that seamlessly blend creativity with functionality. 
+                    Welcome! I am a passionate full-stack developer dedicated to crafting dynamic, user-friendly web applications. With expertise in JavaScript, React, Node.js, and Express, I thrive on building innovative solutions that seamlessly blend creativity with functionality.
                 </p>
                 <p style={styles.paragraph}>
-                Explore my portfolio to discover the projects that showcase my technical skills and commitment to delivering impactful digital experiences.
+                    Explore my portfolio to discover the projects that showcase my technical skills and commitment to delivering impactful digital experiences.
                 </p>
-                <Link to="/projects" style={{ ...styles.link, ...(isHovered ? styles.linkHover : {}) }} 
+                <Link to="/projects" 
+                    style={{ ...styles.link, ...(isHovered ? styles.linkHover : {}) }} 
                     onMouseEnter={() => setIsHovered(true)} 
                     onMouseLeave={() => setIsHovered(false)}
                 >
                     View My Projects
                 </Link>
-                
             </div>
-        
         </div>
     );
 };
@@ -59,12 +71,6 @@ const styles = {
         fontSize: '18px',
         color: '#d3d3d3',
         margin: '10px 0',
-    },
-    profilePic: {
-        width: '200px',
-        borderRadius: '50%',
-        marginBottom: '20px',
-        border: '4px solid #444',
     },
     link: {
         display: 'inline-block',
