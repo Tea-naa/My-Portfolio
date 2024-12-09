@@ -1,4 +1,6 @@
 import React from 'react';
+import '@fortawesome/fontawesome-free/css/all.min.css';
+
 import { BrowserRouter as Router, Route, Routes, useLocation } from 'react-router-dom';
 import { CSSTransition, TransitionGroup } from 'react-transition-group';
 import Home from './components/Home.js'; 

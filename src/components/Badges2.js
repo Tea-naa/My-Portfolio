@@ -45,44 +45,27 @@ const badgesList = [
     { title: "Get Started with Jira Certificate", link: 'https://www.coursera.org/account/accomplishments/certificate/N2Q6CVA44CJN', type: 'pdf' },
     { title: "Trello for Beginners Certificate", link: 'https://www.coursera.org/account/accomplishments/certificate/RCT5WCBMFJ8F', type: 'pdf' },
 ];
+
 const Badges = () => {
     return (
         <div className="container">
             <h2 className="heading">My Certificates</h2>
-            <p className="click-instruction">Click on a certificate to see the credentials or download them.</p>
+            <p className="click-instruction">Click on a certificate to see the credentials.</p>
             <div className="badges">
                 {badgesList.map((badge, index) => (
-                    <div key={index} className="badge">
+                    <a key={index} href={badge.link} target="_blank" rel="noopener noreferrer" className="badge">
                         {badge.type === 'image' ? (
-                            <a href={badge.link} target="_blank" rel="noopener noreferrer">
-                                <img src={badge.img} alt={badge.title} className="image" />
-                                <div className="title">{badge.title}</div>
-                            </a>
+                            <img src={badge.img} alt={badge.title} className="image" />
                         ) : (
-                            <div>
-                                {/* For PDF badges */}
-                                <a href={badge.link} target="_blank" rel="noopener noreferrer" className="pdf-badge-link">
-                                    <i className="fa-regular fa-file-pdf" style={{ fontSize: '2rem', color: '#e74c3c' }}></i>
-                                    <div className="title">{badge.title}</div>
-                                </a>
-                               
-                            </div>
+                            <i className="fa-regular fa-file-pdf" style={{ fontSize: '2rem', color: '#e74c3c' }}></i>
                         )}
-                    </div>
+                        <div className="title">{badge.title}</div>
+                    </a>
+                    
                 ))}
             </div>
-
-            {/* Add the Download My Credentials button */}
-            <div className="credential-link-container">
-                <a 
-                    href="Tina Bajwa's Credentials.pdf" // Update path if needed
-                    download="Tina_Bajwa_Credentials.pdf"
-                    className="credential-link"
-                >
-                    Download My Credentials (PDF)
-                </a>
-            </div>
         </div>
+        
     );
 };
 

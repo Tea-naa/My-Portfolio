@@ -252,32 +252,3 @@ button:hover {
         font-size: 14px;
     }
 }
-
-@media (max-width: 480px) {
-    .projects-heading {
-        font-size: 24px;
-    }
-
-    .project-card {
-        width: 100%;
-        padding: 15px;
-    }
-
-    .modal-title {
-        font-size: 18px;
-    }
-
-    .modal-description {
-        font-size: 12px;
-    }
-
-    .button-link {
-        padding: 6px 10px;
-        font-size: 12px;
-    }
-
-    button {
-        padding: 6px 10px;
-        font-size: 12px;
-    }
-}

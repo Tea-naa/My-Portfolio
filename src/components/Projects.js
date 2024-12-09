@@ -100,6 +100,7 @@ const Projects = () => {
           contentLabel="Project Modal"
           className="modal-content"
           overlayClassName="modal-overlay"
+          closeTimeoutMS={300}  // Optional, adds a smooth fade-out effect when closing
         >
           <div className="project-card modal-project-card">
             <h2 className="modal-title">{selectedProject.title}</h2>
