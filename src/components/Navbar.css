@@ -75,6 +75,6 @@
     /* Show the hamburger menu toggle on mobile */
     .navbar-toggle {
         display: flex; /* Show hamburger icon on mobile */
-        margin-right: 30px; /* Add some space from the right edge */
+        margin-right: 35px; /* Add some space from the right edge */
     }
 }
