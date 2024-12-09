@@ -59,14 +59,14 @@ html {
     scroll-behavior: smooth; /* Enable smooth scrolling */
 }
 
-nav {
+ nav {
     position: fixed; /* Fix the navbar at the top */
     top: 0;
     width: 100%; /* Ensure the navbar spans the full width */
     z-index: 1000; /* Make sure it stays on top */
     background-color: #1c1c1c; /* Same background color as body */
     padding: 15px;
-}
+} 
 
 .container {
     padding-top: 80px; /* Add padding to the top to avoid overlap with the fixed navbar */

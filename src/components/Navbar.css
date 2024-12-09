@@ -6,7 +6,7 @@
     background-color: #1c1c1c;
     padding: 15px;
     display: flex;
-    justify-content: space-between;
+    justify-content: space-between; /* Space between elements */
     align-items: center;
     border-bottom: 2px solid #333;
     z-index: 999;
@@ -16,12 +16,15 @@
 .navbar-container {
     display: flex;
     align-items: center;
+    width: 100%; /* Ensures the container spans the full width */
+    justify-content: space-between; /* Space out the elements to the sides */
 }
 
 .navbar-toggle {
-    display: none; /* Hidden by default */
+    display: none; /* Hidden by default on desktop */
     flex-direction: column;
     cursor: pointer;
+    margin-left: auto; /* This will push the hamburger menu to the right */
 }
 
 .bar {
@@ -35,6 +38,7 @@
 .navbar-links {
     display: flex;
     gap: 30px;
+    align-items: center;
 }
 
 .navbar-link {
@@ -52,6 +56,7 @@
 
 /* Media Query for mobile screens */
 @media (max-width: 768px) {
+    /* This ensures navbar links are hidden initially on mobile */
     .navbar-links {
         display: none; /* Hidden by default */
         flex-direction: column;
@@ -62,11 +67,14 @@
         background-color: #1c1c1c;
     }
 
+    /* Show navbar links when the toggle button is clicked */
     .navbar-links.active {
         display: flex; /* Show links when toggled */
     }
 
+    /* Show the hamburger menu toggle on mobile */
     .navbar-toggle {
         display: flex; /* Show hamburger icon on mobile */
+        margin-right: 30px; /* Add some space from the right edge */
     }
 }
