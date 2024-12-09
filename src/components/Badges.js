@@ -49,7 +49,7 @@ const Badges = () => {
     return (
         <div className="container">
             <h2 className="heading">My Certificates</h2>
-            <p className="click-instruction">Click on a certificate to see the credentials or download them.</p>
+            <p className="click-instruction">Click on a certificate to see the credentials.</p>
             <div className="badges">
                 {badgesList.map((badge, index) => (
                     <div key={index} className="badge">
