@@ -6,9 +6,8 @@ const Contact = () => {
         <div className="contact-container">
             <h2 className="contact-heading">Contact Me</h2>
             <form 
-                action="mailto:TinaMarie.Bajwa@gmail.com" 
-                method="post" 
-                encType="text/plain" 
+                action="https://formspree.io/f/mrbgvpyo" 
+                method="POST" 
                 className="contact-form"
             >
                 <div className="input-group">
