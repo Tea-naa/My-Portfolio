@@ -34,6 +34,7 @@ const Home = () => {
                 <p style={styles.paragraph}>
                     Explore my portfolio to discover the projects that showcase my technical skills and commitment to delivering impactful digital experiences.
                 </p>
+
                 <Link to="/projects" 
                     style={{ ...styles.link, ...(isHovered ? styles.linkHover : {}) }} 
                     onMouseEnter={() => setIsHovered(true)} 
@@ -41,6 +42,17 @@ const Home = () => {
                 >
                     View My Projects
                 </Link>
+            </div>
+
+            {/* Resume Download Button placed at the bottom and centered */}
+            <div style={styles.resumeContainer}>
+                <a 
+                    href="/TinaBajwaResume.pdf" // Ensure the PDF is in the public folder
+                    download="Tina_Bajwa_Resume.pdf"
+                    style={styles.resumeLink}
+                >
+                    Download My Resume (PDF)
+                </a>
             </div>
         </div>
     );
@@ -51,6 +63,7 @@ const styles = {
         display: 'flex',
         flexDirection: 'column',
         minHeight: '100vh', // Ensures full height
+        justifyContent: 'space-between', // Pushes content to the top and bottom
     },
     container: {
         flex: '1', // Pushes footer to the bottom
@@ -86,6 +99,28 @@ const styles = {
     linkHover: {
         transform: 'scale(1.1)',
         boxShadow: '0 0 20px rgba(0, 255, 255, 0.8)',
+    },
+    resumeContainer: {
+        display: 'flex',
+        justifyContent: 'center', // Centers the resume button horizontally
+        alignItems: 'center', // Centers the button vertically
+        marginTop: 'auto', // Pushes it to the bottom of the page
+        marginBottom: '30px', // Adds space from the bottom
+    },
+    resumeLink: {
+        display: 'inline-block',
+        padding: '12px 30px',
+        backgroundColor: '#f39c12',
+        color: '#fff',
+        borderRadius: '5px',
+        textDecoration: 'none',
+        fontSize: '16px',
+        transition: 'transform 0.3s, box-shadow 0.3s',
+        boxShadow: '0 0 10px rgba(0, 255, 255, 0.5)',
+    },
+    resumeLinkHover: {
+        transform: 'scale(1.1)',
+        boxShadow: '0 0 20px rgba(243, 156, 18, 0.8)',
     },
 };
 

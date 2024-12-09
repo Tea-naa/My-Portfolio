@@ -94,6 +94,9 @@
 .skills-list li {
     margin-bottom: 10px;
 }
+.skills-list li:last-child {
+    margin-bottom: 30px; /* Add spacing below the last item (Cybersecurity) */
+}
 
 .resume-link {
     font-size: 18px;
