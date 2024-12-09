@@ -48,7 +48,7 @@ const About = () => {
                             <li><strong>Cybersecurity</strong>: Ensuring the safety and privacy of applications and user data.</li>
                         </ul>
                     </div>
-                    <a href="path/to/your/resume.pdf" className="resume-link" download>
+                    <a href="TinaBajwaResume.pdf" className="resume-link" download>
                         Download My Resume
                     </a>
                 </div>
