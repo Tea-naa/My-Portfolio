@@ -39,6 +39,22 @@ const Projects = () => {
 
   const projectList = [
     {
+      title: 'High-Availability Wordpress Infrastructure',
+      description: 'Migrated legacy single-server WordPress site to high-availability infrastructure using Terraform and Ansible on DigitalOcean.',
+      link: 'https://github.com/Tea-naa', 
+      technologies: ['Terraform', 'Ansible', 'DigitalOcean', 'Apache', 'MySQL', 'Bash', 'Load Balancer', 'SSL/TLS'],
+      image: null, 
+      isInfraProject: true, // Flag to identify infrastructure projects
+      details: [
+        'Converted single-server setup to multi-node high-availability architecture with load balancer failover',
+        'Automated disaster recovery scripts reducing restore time from hours to 15 minutes',
+        'Implemented SSL certificate automation using acme.sh with DNS-01 challenge',
+        'Deployed and tested multi-region infrastructure for global scaling',
+        'Configured MySQL replication and Apache web servers across multiple nodes',
+        'Created comprehensive technical documentation and runbooks for team operations',
+      ],
+    },
+    {
       title: 'To-do List App',
       description: 'A full-stack CRUD to-do list application to manage daily tasks efficiently.',
       link: 'https://github.com/Tea-naa/Project-3.git',
@@ -94,69 +110,82 @@ const Projects = () => {
       </div>
 
       {selectedProject && (
-        <Modal
-          isOpen={modalIsOpen}
-          onRequestClose={closeModal}
-          contentLabel="Project Modal"
-          className="modal-content"
-          overlayClassName="modal-overlay"
-          closeTimeoutMS={300}  // Optional, adds a smooth fade-out effect when closing
-        >
-          <div className="project-card modal-project-card">
-            <h2 className="modal-title">{selectedProject.title}</h2>
-            <div className="modal-content-wrapper">
-              {selectedProject.images ? (
-                <div className="modal-images">
-                  {selectedProject.images.map((image, idx) => (
-                    <a
-                      key={idx}
-                      href={image}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                    >
-                      <img
-                        src={image}
-                        alt={`${selectedProject.title} screenshot ${idx + 1}`}
-                        className="modal-image-side-by-side"
-                      />
-                    </a>
-                  ))}
-                </div>
-              ) : (
-                <a
-                  href={selectedProject.image}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  <img
-                    src={selectedProject.image}
-                    alt={`${selectedProject.title} screenshot`}
-                    className="modal-image"
-                  />
-                </a>
-              )}
-            </div>
-            <p className="modal-description">{selectedProject.description}</p>
-            <hr className="description-divider" />
-            <p className="technologies-used">
-              <strong>Technologies Used:</strong>{' '}
-              {selectedProject.technologies.join(', ')}
-            </p>
+  <Modal
+    isOpen={modalIsOpen}
+    onRequestClose={closeModal}
+    contentLabel="Project Modal"
+    className="modal-content"
+    overlayClassName="modal-overlay"
+    closeTimeoutMS={300} // fade-out effect
+  >
+    <div className="project-card modal-project-card">
+      <h2 className="modal-title">{selectedProject.title}</h2>
 
-            <div className="modal-buttons">
+      <div className="modal-content-wrapper">
+        {selectedProject.isInfraProject ? (
+          <div className="infra-details">
+            <div className="infra-icon">🏗️</div>
+            <p className="infra-note">Infrastructure & DevOps Project</p>
+            <ul className="infra-details-list">
+              {selectedProject.details.map((detail, idx) => (
+                <li key={idx}>{detail}</li>
+              ))}
+            </ul>
+          </div>
+        ) : selectedProject.images ? (
+          <div className="modal-images">
+            {selectedProject.images.map((image, idx) => (
               <a
-                className="project-link button-link"
-                href={selectedProject.link}
+                key={idx}
+                href={image}
                 target="_blank"
                 rel="noopener noreferrer"
               >
-                Visit Project
+                <img
+                  src={image}
+                  alt={`${selectedProject.title} screenshot ${idx + 1}`}
+                  className="modal-image-side-by-side"
+                />
               </a>
-              <button onClick={closeModal}>Close</button>
-            </div>
+            ))}
           </div>
-        </Modal>
-      )}
+        ) : selectedProject.image ? (
+          <a
+            href={selectedProject.image}
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <img
+              src={selectedProject.image}
+              alt={`${selectedProject.title} screenshot`}
+              className="modal-image"
+            />
+          </a>
+        ) : null}
+      </div>
+
+      <p className="modal-description">{selectedProject.description}</p>
+      <hr className="description-divider" />
+      <p className="technologies-used">
+        <strong>Technologies Used:</strong>{' '}
+        {selectedProject.technologies.join(', ')}
+      </p>
+
+      <div className="modal-buttons">
+        <a
+          className="project-link button-link"
+          href={selectedProject.link}
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          {selectedProject.isInfraProject ? 'View My GitHub' : 'Visit Project'}
+        </a>
+        <button onClick={closeModal}>Close</button>
+      </div>
+    </div>
+  </Modal>
+)}
+
     </div>
   );
 };

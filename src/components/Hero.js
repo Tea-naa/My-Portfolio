@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import './Hero.css';
 
-const roles = ['coder', 'creator', 'full-stack developer', 'innovator'];
+const roles = ['Site Reliability Engineer', 'DevOps Engineer', 'Infrastructure Automator', 'Problem Solver'];
 
 const Hero = () => {
     const [index, setIndex] = useState(0);

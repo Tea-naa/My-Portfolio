@@ -19,8 +19,15 @@ import badge16 from '../badges/16.png';
 import badge17 from '../badges/17.png';
 import badge18 from '../badges/18.png';
 import badge21 from '../badges/21.png';
+import cert from '../badges/cert.png';
 
 const badgesList = [
+    { 
+        img: cert, 
+        title: "Software Engineering Certificate", 
+        link: cert, // opens the actual image in a new tab
+        type: 'image' 
+      },
     { img: badge4, title: "Certified ScrumMaster® (CSM)", link: 'https://bcert.me/sixsqutgv', type: 'image' },
     { img: badge1, title: "Data Structures & Algorithm Theory", link: 'https://www.credly.com/badges/06bfd03a-4e07-4330-860b-3773d75d5f43/linked_in_profile', type: 'image' },
     { img: badge2, title: "Dynamic and Interactive Web Pages - Beginners JavaScript DOM", link: 'https://www.credly.com/badges/78a2ca0e-71ee-4d65-a035-c629504f7f84/linked_in_profile', type: 'image' },
@@ -72,10 +79,10 @@ const Badges = () => {
                 ))}
             </div>
 
-            {/* Add the Download My Credentials button */}
+            {/* Add Download My Credentials button */}
             <div className="credential-link-container">
                 <a 
-                    href="Tina Bajwa's Credentials.pdf" // Update path if needed
+                    href="Tina Bajwa's Credentials.pdf" 
                     download="Tina_Bajwa_Credentials.pdf"
                     className="credential-link"
                 >
