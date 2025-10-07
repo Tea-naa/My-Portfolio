@@ -17,34 +17,36 @@ const About = () => {
                         className="profile-image" 
                     />
                     <div className="profile-hover">
-                        <p>Full Stack Developer | Tech Enthusiast | Lifelong Learner</p>
+                        <p>Site Reliability Engineer | DevOps | Full Stack Developer</p>
                     </div>
                 </div>
                 <div className="about-content">
     <h2 className="about-heading">About Me</h2>
     <p className="about-paragraph">
-        Hi, I'm Tina, a certified ScrumMaster® and passionate software engineer dedicated to creating impactful applications that solve complex problems. 
-        My journey began with HTML and CSS, and I have since gained strong expertise in JavaScript, React, Node.js, and MySQL.
+        Hi, I'm Tina, a Site Reliability Engineer and certified Scrum Master® passionate about building reliable, scalable 
+        infrastructure and impactful applications. My journey began with full-stack development and evolved into infrastructure 
+        automation after discovering my love for DevOps and SRE practices.
     </p>
     <p className="about-paragraph">
-        I specialize in full-stack development and have hands-on experience in building efficient, user-friendly applications, 
-        including projects like the Killer Knowledge App and the Animal Adoption Website. I thrive in Agile environments, 
-        collaborating with cross-functional teams to deliver innovative solutions on time.
+        I recently completed an SRE internship at Addteq where I converted their legacy WordPress site to high-availability 
+        infrastructure using Terraform and Ansible on DigitalOcean. I automated disaster recovery workflows, managed SSL
+        certificates, and deployed multi-region infrastructure—cutting environment restore time from hours to minutes.
     </p>
     <p className="about-paragraph">
-        My passion lies in continuous learning and problem-solving. Whether working on intuitive front-end interfaces or robust back-end systems, 
-        I excel at designing scalable solutions that prioritize user experience and system performance.
+        My background includes full-stack development with JavaScript, React, Node.js, and MySQL, giving me a unique perspective
+        on both application development and infrastructure operations. I thrive in collaborative environments and excel at creating
+        solutions that balance reliability, performance, and user experience.
     </p>
     <div className="skills-container">
         <p className="about-paragraph">
-            I'm enthusiastic about advancing my skills and expertise in cutting-edge areas of the tech industry, including:
+            My expertise spans across infrastructure, DevOps, and development:
         </p>
         <ul className="skills-list">
-            <li><strong>AI and Machine Learning</strong>: Utilizing AI-driven tools, such as GitHub Copilot, to enhance code efficiency and productivity.</li>
-            <li><strong>Cloud Computing</strong>: Deploying scalable and secure applications using platforms like Azure DevOps and AWS.</li>
-            <li><strong>DevOps Practices</strong>: Designing and implementing CI/CD pipelines for seamless integration, testing, and deployment.</li>
-            <li><strong>Microservices Architecture</strong>: Building modular applications with independently scalable and deployable services.</li>
-            <li><strong>Cybersecurity</strong>: Protecting sensitive data through secure coding practices, encryption, and proactive vulnerability management.</li>
+            <li><strong>Infrastructure as Code</strong>: Terraform, Ansible, and automated provisioning for consistent, repeatable deployments</li>
+            <li><strong>Cloud & DevOps</strong>: AWS, DigitalOcean, CI/CD pipelines, Docker, and load balancer configuration</li>
+            <li><strong>Site Reliability Engineering</strong>: High-availability architecture, disaster recovery automation, and system monitoring</li>
+            <li><strong>Full-Stack Development</strong>: JavaScript, React, Node.js, Express, MySQL for building scalable web applications</li>
+            <li><strong>Security & Best Practices</strong>: SSL/TLS management, secure authentication, and infrastructure security</li>
         </ul>
                     </div>
                     <a href="TinaBajwaResume.pdf" className="resume-link" download>

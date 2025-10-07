@@ -21,7 +21,7 @@ const Home = () => {
                         onMouseLeave={() => setIsHovered(false)}
                     />
                     <div className={`profile-hover ${isHovered ? 'profile-hover-visible' : ''}`}>
-                        <p>Full Stack Developer | Tech Enthusiast | Lifelong Learner</p>
+                    <p>Site Reliability Engineer | Full Stack Developer | Infrastructure Enthusiast</p>
                     </div>
                 </div>
 
@@ -29,10 +29,11 @@ const Home = () => {
                     Welcome to My Portfolio!
                 </h1>
                 <p style={styles.paragraph}>
-                    Welcome! I am a passionate full-stack developer dedicated to crafting dynamic, user-friendly web applications. With expertise in JavaScript, React, Node.js, and Express, I thrive on building innovative solutions that seamlessly blend creativity with functionality.
+                Welcome! I'm a Site Reliability Engineer with experience in infrastructure automation and full-stack development. I specialize in building high-availability systems using Terraform and Ansible, while also creating user-friendly web applications with JavaScript, React, and Node.js.
+
                 </p>
                 <p style={styles.paragraph}>
-                    Explore my portfolio to discover the projects that showcase my technical skills and commitment to delivering impactful digital experiences.
+                    Explore my portfolio to see infrastructure projects, DevOps automation, and full-stack applications that showcase my technical skills and commitment to building reliable, scalable systems.
                 </p>
 
                 <Link to="/projects" 
