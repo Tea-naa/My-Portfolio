@@ -21,28 +21,36 @@ const Home = () => {
                         onMouseLeave={() => setIsHovered(false)}
                     />
                     <div className={`profile-hover ${isHovered ? 'profile-hover-visible' : ''}`}>
-                    <p>Site Reliability Engineer | Full Stack Developer | Infrastructure Enthusiast</p>
+                    <p>DevOpsEngineer | Full Stack Developer | Infrastructure Enthusiast</p>
                     </div>
                 </div>
 
                 <h1 className="animate__animated animate__fadeInDown" style={styles.heading}>
-                    Welcome to My Portfolio!
-                </h1>
-                <p style={styles.paragraph}>
-                Welcome! I'm a Site Reliability Engineer with experience in infrastructure automation and full-stack development. I specialize in building high-availability systems using Terraform and Ansible, while also creating user-friendly web applications with JavaScript, React, and Node.js.
+    Welcome to My Portfolio!
+</h1>
+<p style={styles.paragraph}>
+    I build infrastructure, automate deployments, and create full-stack applications. During my recent 
+    internship at Addteq, I automated disaster recovery workflows and converted their legacy infrastructure 
+    to a highly available multi-region setup using Terraform and Ansible—cutting environment restore time 
+    from hours to 15 minutes.
+</p>
+<p style={styles.paragraph}>
+    Whether it's building web applications with React and Node.js, provisioning cloud infrastructure, or 
+    setting up CI/CD pipelines, I focus on solving problems and making systems work better. I like working 
+    across the entire stack because understanding both code and infrastructure helps me build things that 
+    actually work in production.
+</p>
+<p style={styles.paragraph}>
+    Explore my portfolio to see what I've been working on. 🚀
+</p>
 
-                </p>
-                <p style={styles.paragraph}>
-                    Explore my portfolio to see infrastructure projects, DevOps automation, and full-stack applications that showcase my technical skills and commitment to building reliable, scalable systems.
-                </p>
-
-                <Link to="/projects" 
-                    style={{ ...styles.link, ...(isHovered ? styles.linkHover : {}) }} 
-                    onMouseEnter={() => setIsHovered(true)} 
-                    onMouseLeave={() => setIsHovered(false)}
-                >
-                    View My Projects
-                </Link>
+<Link to="/projects" 
+    style={{ ...styles.link, ...(isHovered ? styles.linkHover : {}) }} 
+    onMouseEnter={() => setIsHovered(true)} 
+    onMouseLeave={() => setIsHovered(false)}
+>
+    View My Work
+</Link>
             </div>
 
             {/* Resume Download Button placed at the bottom and centered */}

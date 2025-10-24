@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import './Hero.css';
 
-const roles = ['Site Reliability Engineer', 'DevOps Engineer', 'Infrastructure Automator', 'Problem Solver'];
+const roles = ['DevOps Engineer', 'Full Stack Developer', 'Automation Enthusiast', 'Problem Solver'];
 
 const Hero = () => {
     const [index, setIndex] = useState(0);
@@ -30,8 +30,8 @@ const Hero = () => {
         return () => clearTimeout(timer);
     }, [text, isDeleting, index]);
 
-    // Conditional article for "innovator"
-    const article = roles[index] === 'innovator' ? 'an' : 'a';
+    // Conditional article for "Automation Enthusiast"
+    const article = roles[index] === 'Automation Enthusiast' ? 'an' : 'a';
 
     return (
         <div className="hero-container">
