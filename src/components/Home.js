@@ -29,20 +29,19 @@ const Home = () => {
     Welcome to My Portfolio!
 </h1>
 <p style={styles.paragraph}>
-    I build infrastructure, automate deployments, and create full-stack applications. During my recent 
-    internship at Addteq, I automated disaster recovery workflows and converted their legacy infrastructure 
-    to a highly available multi-region setup using Terraform and Ansible—cutting environment restore time 
-    from hours to 15 minutes.
-</p>
-<p style={styles.paragraph}>
-    Whether it's building web applications with React and Node.js, provisioning cloud infrastructure, or 
-    setting up CI/CD pipelines, I focus on solving problems and making systems work better. I like working 
-    across the entire stack because understanding both code and infrastructure helps me build things that 
-    actually work in production.
-</p>
-<p style={styles.paragraph}>
-    Explore my portfolio to see what I've been working on. 🚀
-</p>
+                    I build <strong>scalable systems</strong> and the <strong>infrastructure to run them</strong>. 
+                    At Addteq, I cut disaster recovery from <strong>hours to minutes</strong> using Terraform + Ansible.
+                </p>
+
+                <p style={styles.paragraph}>
+                    From <strong>React + Node.js + MongoDB</strong> full-stack apps to <strong>Docker + Kubernetes</strong> deployments 
+                    (Minikube, PVCs, self-healing), I work across the stack to ship things that <em>actually work in production</em>.
+                </p>
+
+                <p style={styles.paragraph}>
+                    Featured: <strong>TipTrack</strong> — a MERN tip tracker with real-time tax logic, deployed on Kubernetes.  
+                    <em>See it in Projects →</em>
+                </p>
 
 <Link to="/projects" 
     style={{ ...styles.link, ...(isHovered ? styles.linkHover : {}) }} 

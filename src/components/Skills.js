@@ -1,20 +1,19 @@
 import React, { useState } from 'react';
-
 import { 
-    FaHtml5, FaCss3Alt, FaJs, FaReact, FaNodeJs, FaDatabase, 
-    FaDocker, FaAws, FaLinux, FaCloud 
-  } from 'react-icons/fa';
-  import { 
-    SiPostman, SiExpress, SiVisualstudiocode, SiBootstrap, 
-    SiTerraform, SiAnsible, SiDigitalocean, SiConfluence 
-  } from 'react-icons/si';
-  import { IoSettingsOutline } from "react-icons/io5";
-  
+  FaHtml5, FaCss3Alt, FaJs, FaReact, FaNodeJs, FaDatabase, 
+  FaDocker, FaAws, FaLinux, FaCloud, FaGithub 
+} from 'react-icons/fa';
+import { 
+  SiPostman, SiExpress, SiVisualstudiocode, SiBootstrap, 
+  SiTerraform, SiAnsible, SiDigitalocean, SiConfluence,
+  SiKubernetes, SiMongodb, SiJira
+} from 'react-icons/si';
+import { IoSettingsOutline } from "react-icons/io5";
 
 const Skills = () => {
   const [hoveredSkill, setHoveredSkill] = useState(null);
 
-  // 💻 Core Development Stack
+  // Core Development Stack
   const devSkills = [
     { name: 'HTML', icon: <FaHtml5 /> },
     { name: 'CSS', icon: <FaCss3Alt /> },
@@ -23,32 +22,37 @@ const Skills = () => {
     { name: 'Node.js', icon: <FaNodeJs /> },
     { name: 'Express.js', icon: <SiExpress /> },
     { name: 'MySQL', icon: <FaDatabase /> },
+    { name: 'MongoDB Atlas', icon: <SiMongodb /> },
     { name: 'REST APIs', icon: <IoSettingsOutline /> },
     { name: 'Bootstrap', icon: <SiBootstrap /> },
     { name: 'Postman', icon: <SiPostman /> },
     { name: 'VS Code', icon: <SiVisualstudiocode /> },
+    { name: 'Git/GitHub', icon: <FaGithub /> },
   ];
 
-  // ⚙️ DevOps / SRE & Cloud Tools
-    const devopsSkills = [
-        { name: 'AWS', icon: <FaAws /> },
-        { name: 'DigitalOcean', icon: <SiDigitalocean /> },
-        { name: 'Docker', icon: <FaDocker /> },
-        { name: 'Terraform', icon: <SiTerraform /> },
-        { name: 'Ansible', icon: <SiAnsible /> },
-        { name: 'Confluence', icon: <SiConfluence /> },
-        { name: 'Cloud Architecture', icon: <FaCloud /> },
-        { name: 'Bash / Linux Shell', icon: <FaLinux /> },
-      ];
+  // DevOps / SRE & Cloud Tools
+  const devopsSkills = [
+    { name: 'AWS', icon: <FaAws /> },
+    { name: 'DigitalOcean', icon: <SiDigitalocean /> },
+    { name: 'Docker', icon: <FaDocker /> },
+    { name: 'Kubernetes', icon: <SiKubernetes /> },
+    { name: 'Minikube', icon: <SiKubernetes /> },
+    { name: 'Terraform', icon: <SiTerraform /> },
+    { name: 'Ansible', icon: <SiAnsible /> },
+    { name: 'Load Balancer', icon: <FaCloud /> },
+    { name: 'Firewall (UFW)', icon: <FaLinux /> },
+    { name: 'Confluence', icon: <SiConfluence /> },
+    { name: 'Jira', icon: <SiJira /> },
+    { name: 'Bash / Linux', icon: <FaLinux /> },
+  ];
 
-
-  // 🧩 Professional / Workflow Skills
+  // Professional / Workflow Skills (from resume)
   const workflowSkills = [
     'Infrastructure as Code (IaC)',
     'High-Availability Architecture',
     'CI/CD Pipeline Automation',
     'Disaster Recovery & Backups',
-    'Monitoring & Alerts (DigitalOcean, CloudWatch)',
+    'Monitoring & Alerts (DigitalOcean)',
     'Agile Development (Scrum)',
     'System Troubleshooting & Root Cause Analysis',
     'Technical Documentation & Runbooks',
@@ -60,7 +64,7 @@ const Skills = () => {
     <div style={styles.container}>
       <h2 style={styles.heading}>Technical Skills</h2>
 
-      {/* Core Development */}
+      {/* Full-Stack Development */}
       <h3 style={styles.subheading}>Full-Stack Development</h3>
       <div style={styles.skills}>
         {devSkills.map((skill, index) => (
@@ -68,9 +72,9 @@ const Skills = () => {
             key={index}
             style={{
               ...styles.skill,
-              ...(hoveredSkill === index ? styles.skillHover : {}),
+              ...(hoveredSkill === `dev-${index}` ? styles.skillHover : {}),
             }}
-            onMouseEnter={() => setHoveredSkill(index)}
+            onMouseEnter={() => setHoveredSkill(`dev-${index}`)}
             onMouseLeave={() => setHoveredSkill(null)}
           >
             {skill.icon}
@@ -87,9 +91,9 @@ const Skills = () => {
             key={index}
             style={{
               ...styles.skill,
-              ...(hoveredSkill === `devops-${index}` ? styles.skillHover : {}),
+              ...(hoveredSkill === `ops-${index}` ? styles.skillHover : {}),
             }}
-            onMouseEnter={() => setHoveredSkill(`devops-${index}`)}
+            onMouseEnter={() => setHoveredSkill(`ops-${index}`)}
             onMouseLeave={() => setHoveredSkill(null)}
           >
             {skill.icon}
@@ -98,7 +102,7 @@ const Skills = () => {
         ))}
       </div>
 
-      {/* Workflow */}
+      {/* Professional Skills */}
       <h3 style={styles.subheading}>Professional Skills</h3>
       <div style={styles.qualitiesContainer}>
         {workflowSkills.map((skill, index) => (
