@@ -318,3 +318,53 @@ button:hover {
         font-size: 14px;
     }
 }
+
+/* Featured Card */
+.featured-card {
+  border: 2px solid #f39c12;
+  position: relative;
+  overflow: hidden;
+}
+
+.featured-badge {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background: #f39c12;
+  color: #1c1c1c;
+  font-weight: bold;
+  font-size: 0.75rem;
+  padding: 4px 8px;
+  border-radius: 4px;
+  z-index: 10;
+}
+
+/* Modal Images Grid */
+.modal-images {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 12px;
+  margin: 16px 0;
+}
+
+.modal-image-side-by-side {
+  width: 100%;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(243, 156, 18, 0.3);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.modal-image-side-by-side:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 20px rgba(243, 156, 18, 0.8), 0 0 40px rgba rgba(243, 156, 18, 0.6);
+}
+
+/* Live Demo Button */
+.modal-buttons .button-link:nth-child(2) {
+  background-color: #00ffcc;
+  color: #1c1c1c;
+}
+
+.modal-buttons .button-link:nth-child(2):hover {
+  background-color: #1abc9c;
+}
