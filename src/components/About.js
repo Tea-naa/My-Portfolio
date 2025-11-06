@@ -26,7 +26,7 @@ const About = () => {
           </p>
 
           <p className="about-paragraph">
-            Fast forward: I graduated from UT Arlington's bootcamp, landed an SRE internship at Addteq, and cut disaster recovery from hours to minutes with Terraform + Ansible.  
+            Fast forward: I graduated from UT Arlington's bootcamp, landed an SRE internship at Addteq, and cut disaster recovery from hours to 15 minutes with Terraform + Ansible.  
             I built HA WordPress across regions, automated SSL renewals, and fixed prod at 2am — solo.
           </p>
 
@@ -36,7 +36,7 @@ const About = () => {
           </p>
 
           <p className="about-paragraph">
-            My hospitality background taught me empathy, calm under pressure, and how to read people — skills that make me a better collaborator and help me build user-centered solutions.
+            I'm a certified Scrum Master® and thrive in collaborative environments where I can wear multiple hats. My hospitality background taught me that the best solutions come from understanding what people actually need (not just what they say they need), and my technical skills let me build those solutions. I'm always looking to learn new things, improve systems, and tackle interesting challenges—regardless of whether they fall under "development," "operations," or something in between.
           </p>
 
           <div className="skills-container">

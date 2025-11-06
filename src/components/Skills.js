@@ -22,7 +22,7 @@ const Skills = () => {
     { name: 'Node.js', icon: <FaNodeJs /> },
     { name: 'Express.js', icon: <SiExpress /> },
     { name: 'MySQL', icon: <FaDatabase /> },
-    { name: 'MongoDB Atlas', icon: <SiMongodb /> },
+    { name: 'MongoDB', icon: <SiMongodb /> },
     { name: 'REST APIs', icon: <IoSettingsOutline /> },
     { name: 'Bootstrap', icon: <SiBootstrap /> },
     { name: 'Postman', icon: <SiPostman /> },
