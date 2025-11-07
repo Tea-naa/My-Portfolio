@@ -27,7 +27,7 @@ const Home = () => {
           </div>
         </div>
 
-        <h1 className="home-heading">Hi! Welcome to my portfolio!</h1>
+        <h1 className="home-heading">Welcome to my portfolio!</h1>
 
         <p className="home-tagline">
           I automate infrastructure, reduce toil, and build systems that don't fail when it matters.
