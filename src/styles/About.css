@@ -90,6 +90,18 @@
   opacity: 1;
 }
 
+/* Touch devices have no hover — show the overlay permanently instead of
+   hiding this content from anyone on mobile. */
+@media (hover: none) {
+  .about-photo-img {
+    filter: brightness(0.45);
+  }
+
+  .about-photo-overlay {
+    opacity: 1;
+  }
+}
+
 /* ========== SCROLL HINT ========== */
 .about-scroll-hint {
   display: flex;

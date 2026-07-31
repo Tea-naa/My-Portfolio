@@ -17,7 +17,7 @@ const featured = [
     tech: ["React", "Node.js", "Express.js", "MongoDB", "Docker", "Kubernetes", "Minikube", "PVCs", "Nginx", "JWT"],
     link: "https://github.com/Tea-naa/tiptrack",
     linkLabel: "View on GitHub",
-    image: "/projects/tiptrack-dashboard.jpg",
+    images: ["/projects/tiptrack-dashboard.jpg", "/projects/tiptrack-tax.jpg"],
     frameLabel: "TipTrack",
   },
   {
@@ -28,7 +28,7 @@ const featured = [
     tech: ["Terraform", "AWS Cognito", "IAM", "Amazon Connect", "S3", "CloudFront", "Route 53", "WorkMail", "OAuth 2.0", "Amazon SP-API", "NestJS", "TypeScript", "React"],
     link: "https://www.suppliflex.tech/",
     linkLabel: "Visit suppliflex.tech",
-    image: "/projects/suppliflex-site.jpg",
+    images: ["/projects/suppliflex-site.jpg"],
     frameLabel: "suppliflex.tech",
   },
   {
@@ -39,7 +39,7 @@ const featured = [
     tech: ["Terraform", "Ansible", "DigitalOcean", "MySQL", "Apache", "SSL", "Load Balancer"],
     link: "https://addteq.com/",
     linkLabel: "Visit addteq.com",
-    image: "/projects/addteq-site.jpg",
+    images: ["/projects/addteq-site.jpg"],
     frameLabel: "addteq.com",
   },
 ];
@@ -50,7 +50,7 @@ const more = [
     company: "Bootcamp Project",
     tech: ["Node.js", "Express", "MySQL", "REST API"],
     github: "https://github.com/Tea-naa/Project-4",
-    image: "/projects/quiz-login.jpg",
+    images: ["/projects/quiz-login.jpg", "/projects/quiz-2.jpg"],
     frameLabel: "Killer Knowledge Quiz",
   },
   {
@@ -58,7 +58,7 @@ const more = [
     company: "Personal Project",
     tech: ["React", "JavaScript", "CSS"],
     github: "https://github.com/Tea-naa/language-learning-flashcards",
-    image: "/projects/flashcards.jpg",
+    images: ["/projects/flashcards.jpg"],
     frameLabel: "Language Flashcards",
   },
   {
@@ -66,7 +66,7 @@ const more = [
     company: "Bootcamp Project",
     tech: ["React", "Node.js", "Express"],
     github: "https://github.com/Tea-naa/Project-3",
-    image: "/projects/todo-list.jpg",
+    images: ["/projects/todo-list.jpg"],
     frameLabel: "To-do List App",
   },
   {
@@ -74,7 +74,7 @@ const more = [
     company: "Bootcamp Project",
     tech: ["HTML", "CSS", "Bootstrap"],
     github: "https://github.com/Tea-naa/Animal-Adoption-Website",
-    image: "/projects/animal-adoption.jpg",
+    images: ["/projects/animal-adoption.jpg"],
     frameLabel: "Animal Adoption",
   },
   {
@@ -82,7 +82,7 @@ const more = [
     company: "Bootcamp Project",
     tech: ["HTML", "CSS", "JavaScript", "Giphy API"],
     github: "https://github.com/Tea-naa/Project_2",
-    image: "/projects/giphy-search.jpg",
+    images: ["/projects/giphy-search.jpg"],
     frameLabel: "Giphy Search",
   }
 ];
@@ -134,10 +134,10 @@ function Projects() {
             <div className={`project-card${project.featured ? ' featured' : ''}`}>
               <div className="project-image-wrap">
                 <BrowserFrame
-                  src={project.image}
+                  images={project.images}
                   alt={`${project.title} screenshot`}
                   label={project.frameLabel}
-                  onClick={() => setLightbox({ src: project.image, alt: project.title })}
+                  onClick={(clickedSrc) => setLightbox({ src: clickedSrc, alt: project.title })}
                   className="project-image-frame"
                 />
               </div>
@@ -185,10 +185,10 @@ function Projects() {
               <div className="more-project-card">
                 <div className="more-project-image-wrap">
                   <BrowserFrame
-                    src={project.image}
+                    images={project.images}
                     alt={`${project.title} screenshot`}
                     label={project.frameLabel}
-                    onClick={() => setLightbox({ src: project.image, alt: project.title })}
+                    onClick={(clickedSrc) => setLightbox({ src: clickedSrc, alt: project.title })}
                     className="more-project-image-frame"
                   />
                 </div>

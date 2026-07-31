@@ -174,7 +174,7 @@ function WorkPreviewPanel({ project }) {
   return (
     <div className="work-preview-frame" key={project.title}>
       <BrowserFrame
-        src={project.image}
+        images={project.images}
         alt={`${project.title} screenshot`}
         label={project.frameLabel}
       />
@@ -236,7 +236,7 @@ const featuredProjects = [
     company: "Personal Project",
     tech: ["React", "Node.js", "MongoDB", "Docker", "Kubernetes"],
     href: "https://github.com/Tea-naa/tiptrack",
-    image: "/projects/tiptrack-dashboard.jpg",
+    images: ["/projects/tiptrack-dashboard.jpg", "/projects/tiptrack-tax.jpg"],
     frameLabel: "TipTrack",
   },
   {
@@ -245,7 +245,7 @@ const featuredProjects = [
     company: "SuppliFlex",
     tech: ["Terraform", "AWS", "OAuth 2.0", "NestJS"],
     href: "https://www.suppliflex.tech/",
-    image: "/projects/suppliflex-site.jpg",
+    images: ["/projects/suppliflex-site.jpg"],
     frameLabel: "suppliflex.tech",
   },
   {
@@ -254,7 +254,7 @@ const featuredProjects = [
     company: "Addteq",
     tech: ["Terraform", "Ansible", "MySQL", "SSL"],
     href: "https://addteq.com/",
-    image: "/projects/addteq-site.jpg",
+    images: ["/projects/addteq-site.jpg"],
     frameLabel: "addteq.com",
   },
   {
@@ -263,7 +263,7 @@ const featuredProjects = [
     company: "Bootcamp Project",
     tech: ["Node.js", "Express", "MySQL", "REST API"],
     href: "https://github.com/Tea-naa/Project-4",
-    image: "/projects/quiz-login.jpg",
+    images: ["/projects/quiz-login.jpg", "/projects/quiz-2.jpg"],
     frameLabel: "Killer Knowledge Quiz",
   },
   {
@@ -272,7 +272,7 @@ const featuredProjects = [
     company: "Personal Project",
     tech: ["React", "JavaScript", "CSS"],
     href: "https://github.com/Tea-naa/language-learning-flashcards",
-    image: "/projects/flashcards.jpg",
+    images: ["/projects/flashcards.jpg"],
     frameLabel: "Language Flashcards",
   },
   {
@@ -281,7 +281,7 @@ const featuredProjects = [
     company: "Bootcamp Project",
     tech: ["React", "Node.js", "Express"],
     href: "https://github.com/Tea-naa/Project-3",
-    image: "/projects/todo-list.jpg",
+    images: ["/projects/todo-list.jpg"],
     frameLabel: "To-do List App",
   },
   {
@@ -290,7 +290,7 @@ const featuredProjects = [
     company: "Bootcamp Project",
     tech: ["HTML", "CSS", "Bootstrap"],
     href: "https://github.com/Tea-naa/Animal-Adoption-Website",
-    image: "/projects/animal-adoption.jpg",
+    images: ["/projects/animal-adoption.jpg"],
     frameLabel: "Animal Adoption",
   },
   {
@@ -299,7 +299,7 @@ const featuredProjects = [
     company: "Bootcamp Project",
     tech: ["HTML", "CSS", "JavaScript", "Giphy API"],
     href: "https://github.com/Tea-naa/Project_2",
-    image: "/projects/giphy-search.jpg",
+    images: ["/projects/giphy-search.jpg"],
     frameLabel: "Giphy Search",
   },
 ];
