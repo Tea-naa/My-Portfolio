@@ -1,0 +1,300 @@
+/* About.css - Clean about page styling - DARK THEME */
+
+.about {
+  padding: var(--spacing-lg) 60px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.about-container {
+  display: grid;
+  grid-template-columns: 240px 1fr; /* Photo on left, content on right */
+  gap: 80px;
+  align-items: start;
+}
+
+/* ========== PHOTO SECTION ========== */
+.about-photo {
+  position: sticky;
+  top: 100px; /* Sticks to top when scrolling */
+  display: flex;
+  justify-content: center;
+}
+
+.about-photo-circle {
+  position: relative;
+  width: 220px;
+  height: 220px;
+  border-radius: 50%;
+  overflow: hidden;
+  cursor: pointer;
+  box-shadow: 0 0 0 1px rgba(232, 180, 88, 0.25), 0 0 40px rgba(232, 180, 88, 0.12);
+  transition: box-shadow 0.35s ease;
+}
+
+.about-photo-circle:hover {
+  box-shadow: 0 0 0 1px rgba(232, 180, 88, 0.55), 0 0 60px rgba(232, 180, 88, 0.35);
+}
+
+/* Photo placeholder - shows only if /profile.jpg fails to load */
+.photo-placeholder {
+  width: 220px;
+  height: 220px;
+  background-color: #1a1a1a;  /* DARK PLACEHOLDER */
+  border-radius: 50%;
+  align-items: center;
+  justify-content: center;
+  color: var(--color-light-gray);
+  font-size: 14px;
+}
+
+.about-photo-img {
+  width: 220px;
+  height: 220px;
+  object-fit: cover;
+  border-radius: 50%;
+  display: block;
+  transition: transform 0.45s ease, filter 0.45s ease;
+}
+
+.about-photo-circle:hover .about-photo-img {
+  transform: scale(1.08);
+  filter: brightness(0.35);
+}
+
+.about-photo-overlay {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  padding: 24px;
+  text-align: center;
+  opacity: 0;
+  transition: opacity 0.35s ease;
+  pointer-events: none;
+}
+
+.about-photo-overlay span {
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: var(--color-accent-gold);
+  text-shadow: 0 0 12px rgba(232, 180, 88, 0.6);
+}
+
+.about-photo-circle:hover .about-photo-overlay {
+  opacity: 1;
+}
+
+/* ========== SCROLL HINT ========== */
+.about-scroll-hint {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  color: #6b6b6b;
+  margin: -8px 0 44px;
+}
+
+.about-scroll-hint-dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--color-accent-gold);
+  box-shadow: 0 0 8px rgba(232, 180, 88, 0.6);
+  animation: aboutScrollBounce 1.6s ease-in-out infinite;
+}
+
+@keyframes aboutScrollBounce {
+  0%, 100% { transform: translateY(0); opacity: 0.5; }
+  50% { transform: translateY(4px); opacity: 1; }
+}
+
+/* ========== CONTENT SECTION ========== */
+.about-title {
+  font-size: 48px;
+  font-weight: 400;
+  margin-bottom: var(--spacing-md);
+  letter-spacing: -0.02em;
+  color: var(--color-white);  /* WHITE TITLE */
+}
+
+.about-text {
+  margin-bottom: var(--spacing-lg);
+}
+
+.about-text p {
+  font-size: 16px;
+  line-height: 1.7;
+  color: var(--color-gray);
+  margin-bottom: 24px;
+}
+
+.about-text strong {
+  color: var(--color-white);  /* WHITE FOR EMPHASIS */
+  font-weight: 600;
+}
+
+/* ========== EXPERIENCE SECTION ========== */
+.experience {
+  margin-bottom: var(--spacing-lg);
+  padding-top: var(--spacing-md);
+  border-top: 1px solid #333333;  /* DARK BORDER */
+}
+
+.experience-title {
+  font-size: 24px;
+  font-weight: 600;
+  margin-bottom: var(--spacing-md);
+  color: var(--color-white);  /* WHITE TITLE */
+}
+
+.experience-item {
+  margin-bottom: var(--spacing-md);
+}
+
+.experience-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  margin-bottom: 8px;
+}
+
+.experience-item h3 {
+  font-size: 18px;
+  font-weight: 600;
+  color: var(--color-white);  /* WHITE TEXT */
+}
+
+.experience-company {
+  font-size: 16px;
+  color: var(--color-accent-gold);
+  font-weight: 600;
+}
+
+.experience-date {
+  font-size: 14px;
+  color: var(--color-light-gray);
+  margin-bottom: 12px;
+}
+
+.experience-description {
+  font-size: 15px;
+  line-height: 1.6;
+  color: var(--color-gray);
+}
+
+/* ========== SKILLS (folded in from the old standalone Skills page) ========== */
+.skills-categories-inline {
+  max-width: none;
+  margin: 0;
+  gap: 28px;
+  display: flex;
+  flex-direction: column;
+}
+
+.skills-categories-inline .skills-category-title {
+  font-size: 15px;
+  margin-bottom: 12px;
+}
+
+.skills-categories-inline .skills-tag {
+  font-size: 13px;
+  padding: 8px 14px;
+}
+
+/* ========== CERTIFICATIONS ========== */
+.certs-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.cert-chip {
+  font-size: 13px;
+  color: var(--color-white);
+  font-weight: 600;
+  background: rgba(232, 180, 88, 0.06);
+  border: 1px solid rgba(232, 180, 88, 0.25);
+  border-radius: 20px;
+  padding: 8px 16px;
+  transition: all 0.2s ease;
+}
+
+.cert-chip:hover {
+  background: rgba(232, 180, 88, 0.12);
+  border-color: rgba(232, 180, 88, 0.45);
+  box-shadow: 0 0 14px rgba(232, 180, 88, 0.2);
+}
+
+/* ========== CONTACT SECTION ========== */
+.about-contact {
+  padding-top: var(--spacing-md);
+  border-top: 1px solid #333333;  /* DARK BORDER */
+}
+
+.contact-title {
+  font-size: 24px;
+  font-weight: 600;
+  margin-bottom: 24px;
+  color: var(--color-white);  /* WHITE TITLE */
+}
+
+.contact-links {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.contact-links a {
+  font-size: 16px;
+  color: var(--color-white);  /* WHITE LINKS */
+  transition: color 0.2s ease;
+}
+
+.contact-links a:hover {
+  color: var(--color-gray);
+}
+
+/* ========== MOBILE RESPONSIVE ========== */
+@media (max-width: 968px) {
+  .about-container {
+    grid-template-columns: 1fr; /* Stack on mobile */
+    gap: 40px;
+  }
+  
+  .about-photo {
+    position: relative;
+    top: 0;
+  }
+
+  .about-photo-circle,
+  .about-photo-img,
+  .photo-placeholder {
+    width: 180px;
+    height: 180px;
+  }
+
+  .about-title {
+    font-size: 32px;
+    text-align: center;
+  }
+}
+
+@media (max-width: 768px) {
+  .about {
+    padding: var(--spacing-md) 24px;
+  }
+  
+  .experience-header {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}

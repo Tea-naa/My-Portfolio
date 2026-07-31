@@ -1,0 +1,437 @@
+/* Projects.css - SEXY DARK PROJECTS PAGE */
+
+.projects-page {
+  min-height: 100vh;
+  padding: 120px 60px 80px 60px;
+  position: relative;
+}
+
+/* Add subtle background gradient */
+.projects-page::before {
+  content: '';
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: radial-gradient(circle at 20% 50%, rgba(232,180,88,0.1) 0%, transparent 50%),
+              radial-gradient(circle at 80% 80%, rgba(201,138,58,0.1) 0%, transparent 50%);
+  pointer-events: none;
+  z-index: 0;
+}
+
+/* ==========================================
+   PAGE HEADER
+   ========================================== */
+
+.projects-header {
+  max-width: 1400px;
+  margin: 0 auto 80px auto;
+  text-align: center;
+  position: relative;
+  z-index: 1;
+  animation: fadeInUp 0.8s ease-out;
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.projects-title {
+  font-size: clamp(40px, 6vw, 64px);
+  font-weight: 700;
+  margin-bottom: 16px;
+  background: linear-gradient(135deg, #e8b458 0%, #c98a3a 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.projects-subtitle {
+  font-size: 20px;
+  color: #909090;
+}
+
+/* ==========================================
+   PROJECTS GRID
+   ========================================== */
+
+.projects-grid {
+  max-width: 1400px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+  gap: 40px;
+  position: relative;
+  z-index: 1;
+}
+
+/* ==========================================
+   PROJECT CARD
+   ========================================== */
+
+.project-card {
+  background: rgba(255, 255, 255, 0.02);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  border-radius: 16px;
+  overflow: hidden;
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  backdrop-filter: blur(10px);
+  animation: fadeInUp 0.8s ease-out both;
+}
+
+.project-card:hover {
+  transform: translateY(-8px);
+  border-color: rgba(232,180,88, 0.3);
+  box-shadow: 0 20px 60px rgba(232,180,88, 0.2);
+}
+
+.project-card.featured {
+  border-color: rgba(245, 158, 11, 0.4);
+}
+
+.project-card.featured:hover {
+  border-color: rgba(245, 158, 11, 0.6);
+  box-shadow: 0 20px 60px rgba(245, 158, 11, 0.15);
+}
+
+.featured-badge {
+  display: inline-block;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.02em;
+  color: #f59e0b;
+  background: rgba(245, 158, 11, 0.1);
+  border: 1px solid rgba(245, 158, 11, 0.3);
+  border-radius: 20px;
+  padding: 4px 10px;
+  margin-bottom: 8px;
+}
+
+/* ==========================================
+   PROJECT IMAGE — browser-frame screenshot, click to enlarge
+   ========================================== */
+
+.project-image-wrap {
+  width: 100%;
+  height: 280px;
+  padding: 20px 20px 0 20px;
+  background: linear-gradient(135deg, rgba(232,180,88,0.1) 0%, rgba(201,138,58,0.1) 100%);
+}
+
+.project-image-frame {
+  cursor: pointer;
+  transition: transform 0.3s ease;
+}
+
+.project-card:hover .project-image-frame {
+  transform: translateY(-2px);
+}
+
+/* ==========================================
+   PROJECT CONTENT
+   ========================================== */
+
+.project-content {
+  padding: 32px;
+}
+
+.project-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 16px;
+  gap: 16px;
+}
+
+.project-title {
+  font-size: 24px;
+  font-weight: 700;
+  color: white;
+  margin-bottom: 4px;
+  line-height: 1.2;
+}
+
+.project-company {
+  font-size: 14px;
+  color: var(--color-accent-gold);
+  font-weight: 600;
+}
+
+.project-type {
+  font-size: 12px;
+  color: #e8b458;
+  background: rgba(232,180,88, 0.1);
+  padding: 6px 12px;
+  border-radius: 20px;
+  white-space: nowrap;
+  font-weight: 600;
+  border: 1px solid rgba(232,180,88, 0.2);
+}
+
+.project-description {
+  font-size: 15px;
+  line-height: 1.6;
+  color: #a0a0a0;
+  margin-bottom: 24px;
+}
+
+/* ==========================================
+   TECH STACK
+   ========================================== */
+
+.project-tech {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-bottom: 24px;
+}
+
+.tech-tag {
+  font-size: 12px;
+  color: #d0d0d0;
+  background: rgba(255, 255, 255, 0.05);
+  padding: 6px 12px;
+  border-radius: 6px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  transition: all 0.3s ease;
+}
+
+.tech-tag:hover {
+  background: rgba(255, 255, 255, 0.1);
+  border-color: rgba(255, 255, 255, 0.2);
+}
+
+/* ==========================================
+   PROJECT LINKS
+   ========================================== */
+
+.project-links {
+  display: flex;
+  gap: 12px;
+  padding-top: 24px;
+  border-top: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.project-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 10px 20px;
+  border-radius: 8px;
+  font-size: 14px;
+  font-weight: 600;
+  transition: all 0.3s ease;
+  color: #d0d0d0;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  background: rgba(255, 255, 255, 0.02);
+}
+
+.project-link:hover {
+  background: rgba(255, 255, 255, 0.05);
+  border-color: rgba(255, 255, 255, 0.2);
+  color: white;
+  transform: translateY(-2px);
+}
+
+/* Primary link (main CTA) */
+.project-link.primary {
+  background: linear-gradient(135deg, #e8b458 0%, #c98a3a 100%);
+  border: none;
+  color: white;
+  box-shadow: 0 4px 15px rgba(232,180,88, 0.3);
+}
+
+.project-link.primary:hover {
+  box-shadow: 0 6px 25px rgba(232,180,88, 0.5);
+}
+
+/* ==========================================
+   MOBILE RESPONSIVE
+   ========================================== */
+
+/* ==========================================
+   MORE PROJECTS — demoted, collapsed by default
+   ========================================== */
+
+.more-projects {
+  max-width: 1400px;
+  margin: 64px auto 0 auto;
+  position: relative;
+  z-index: 1;
+}
+
+.more-projects-heading {
+  text-align: center;
+  font-size: 13px;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: #6b6b6b;
+}
+
+.more-projects-grid {
+  margin-top: 32px;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 16px;
+}
+
+.more-project-card {
+  display: flex;
+  flex-direction: column;
+  border-radius: 10px;
+  overflow: hidden;
+  background: rgba(255, 255, 255, 0.02);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  transition: all 0.25s ease;
+}
+
+.more-project-card:hover {
+  border-color: rgba(232, 180, 88, 0.25);
+  background: rgba(255, 255, 255, 0.04);
+  transform: translateY(-2px);
+}
+
+.more-project-image-wrap {
+  width: 100%;
+  height: 160px;
+  padding: 12px 12px 0 12px;
+}
+
+.more-project-image-frame {
+  cursor: pointer;
+  transition: transform 0.3s ease;
+}
+
+.more-project-card:hover .more-project-image-frame {
+  transform: translateY(-2px);
+}
+
+.more-project-body {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  padding: 16px 20px 20px;
+}
+
+.more-project-title {
+  font-size: 15px;
+  font-weight: 600;
+  color: #fff;
+}
+
+.more-project-link {
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--color-accent-gold);
+  margin-top: 8px;
+  transition: text-shadow 0.2s ease;
+}
+
+.more-project-link:hover {
+  text-shadow: 0 0 12px rgba(232, 180, 88, 0.5);
+}
+
+/* ==========================================
+   LIGHTBOX — click a screenshot to enlarge
+   ========================================== */
+
+.lightbox-backdrop {
+  position: fixed;
+  inset: 0;
+  z-index: 500;
+  background: rgba(5, 5, 5, 0.92);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 60px 24px;
+  animation: lightboxFadeIn 0.2s ease;
+  cursor: zoom-out;
+}
+
+@keyframes lightboxFadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+.lightbox-img {
+  max-width: 100%;
+  max-height: 100%;
+  border-radius: 8px;
+  box-shadow: 0 20px 80px rgba(0, 0, 0, 0.6);
+  cursor: default;
+}
+
+.lightbox-close {
+  position: fixed;
+  top: 24px;
+  right: 32px;
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  background: rgba(255, 255, 255, 0.05);
+  color: #fff;
+  font-size: 26px;
+  line-height: 1;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.lightbox-close:hover {
+  border-color: rgba(232, 180, 88, 0.4);
+  color: var(--color-accent-gold);
+  box-shadow: 0 0 16px rgba(232, 180, 88, 0.3);
+}
+
+.more-project-company {
+  font-size: 12px;
+  color: #8a8a8a;
+}
+
+.more-project-tech {
+  font-size: 12px;
+  color: #6b6b6b;
+  margin-top: 4px;
+}
+
+@media (max-width: 968px) {
+  .projects-page {
+    padding: 100px 32px 60px 32px;
+  }
+
+  .projects-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .project-header {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}
+
+@media (max-width: 640px) {
+  .projects-header {
+    margin-bottom: 60px;
+  }
+  
+  .project-content {
+    padding: 24px;
+  }
+  
+  .project-links {
+    flex-direction: column;
+  }
+  
+  .project-link {
+    justify-content: center;
+  }
+}

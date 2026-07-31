@@ -1,0 +1,103 @@
+/* App.css - Global styles like Greg's portfolio */
+
+/* RESET - Remove default browser styling */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* CSS VARIABLES - Easy to change colors/spacing later */
+:root {
+  --color-black: #000000;
+  --color-white: #FFFFFF;
+  --color-gray: #999999;
+  --color-light-gray: #666666;
+
+  /* Secondary accent - used sparingly for highlights */
+  --color-accent-gold: #e8b458;
+
+  /* Spacing - Greg uses TONS of whitespace */
+  --spacing-xs: 20px;
+  --spacing-sm: 40px;
+  --spacing-md: 80px;
+  --spacing-lg: 120px;
+  --spacing-xl: 160px;
+
+  /* Font */
+  --font-main: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', sans-serif;
+}
+
+/* BODY - BLACK BACKGROUND LIKE GREG'S */
+body {
+  font-family: var(--font-main);
+  background-color: var(--color-black);  /* BLACK BACKGROUND! */
+  color: var(--color-white);              /* WHITE TEXT! */
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* APP CONTAINER */
+.App {
+  min-height: 100vh;
+  position: relative;
+}
+
+/* ==========================================
+   SPOTLIGHT - the one signature interaction
+   A soft glow that follows the cursor across the whole site.
+   ========================================== */
+
+.spotlight {
+  position: fixed;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+  --spot-x: 50vw;
+  --spot-y: 40vh;
+  background: radial-gradient(
+    600px circle at var(--spot-x) var(--spot-y),
+    rgba(232, 180, 88, 0.10),
+    transparent 65%
+  );
+  transition: background 0.15s ease;
+}
+
+/* Everything else needs to sit above the fixed spotlight layer */
+.navbar,
+.hero,
+.projects-page,
+.about,
+.skills-page,
+.certs-page,
+.contact-page {
+  position: relative;
+  z-index: 1;
+}
+
+/* ==========================================
+   SCROLL REVEAL (used by <Reveal>)
+   ========================================== */
+
+.reveal {
+  opacity: 0;
+  transform: translateY(28px);
+  transition: opacity 0.7s cubic-bezier(0.16, 1, 0.3, 1), transform 0.7s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.reveal-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* SMOOTH SCROLLING */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Remove link underlines globally */
+a {
+  text-decoration: none;
+  color: inherit;
+}

@@ -1,0 +1,99 @@
+/* SkillsBanner.css - compact auto-scrolling tech strip - DARK THEME */
+
+.skills-banner {
+  margin: 0;
+  padding: 28px 0;
+  border-top: 1px solid rgba(255, 255, 255, 0.06);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+  overflow: hidden; /* Hide scrolling edges */
+}
+
+.skills-title {
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: 1.5px;
+  text-align: center;
+  color: #6b6b6b;
+  margin-bottom: 20px;
+}
+
+/* ========== SCROLLING CONTAINER ========== */
+.skills-scroll {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+}
+
+/* Track that moves */
+.skills-track {
+  display: flex;
+  align-items: center;
+  gap: 36px; /* Space between icons */
+  animation: scroll 26s linear infinite; /* Continuous scroll */
+  width: fit-content;
+}
+
+/* Individual skill item */
+.skill-item {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  min-width: 0;
+  white-space: nowrap;
+}
+
+.skill-item img {
+  width: 20px;
+  height: 20px;
+  object-fit: contain;
+  opacity: 0.45; /* More faded for dark theme */
+  transition: opacity 0.3s ease;
+  filter: invert(1); /* INVERTS COLORS FOR DARK THEME - makes dark icons light! */
+}
+
+.skill-item:hover img {
+  opacity: 0.8; /* Brighter on hover */
+}
+
+.skill-item span {
+  font-size: 12px;
+  color: #8a8a8a;
+  text-align: center;
+}
+
+/* ========== SCROLL ANIMATION ========== */
+/* This makes the icons scroll continuously from right to left */
+@keyframes scroll {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    /* Move left by exactly half the width (because we duplicated skills) */
+    transform: translateX(-50%);
+  }
+}
+
+/* Pause animation on hover (optional) */
+.skills-track:hover {
+  animation-play-state: paused;
+}
+
+/* ========== MOBILE ========== */
+@media (max-width: 768px) {
+  .skills-banner {
+    padding: 20px 0;
+  }
+
+  .skills-track {
+    gap: 24px;
+  }
+
+  .skill-item img {
+    width: 16px;
+    height: 16px;
+  }
+
+  .skill-item span {
+    font-size: 10px;
+  }
+}

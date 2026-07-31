@@ -1,0 +1,202 @@
+/* Contact.css - dark / gold-glow contact page */
+
+.contact-page {
+  position: relative;
+  min-height: 100vh;
+  padding: 160px 60px 100px 60px;
+  overflow: hidden;
+}
+
+.contact-page-glow {
+  position: absolute;
+  top: -10%;
+  left: 50%;
+  width: 900px;
+  height: 900px;
+  transform: translateX(-50%);
+  background: radial-gradient(circle, rgba(232, 180, 88, 0.12) 0%, transparent 60%);
+  pointer-events: none;
+  z-index: 0;
+}
+
+.contact-wrap {
+  position: relative;
+  z-index: 1;
+  max-width: 1200px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 80px;
+  align-items: start;
+}
+
+/* ========== LEFT: INTRO + DIRECT LINKS ========== */
+.contact-hero-title {
+  font-size: clamp(32px, 4vw, 48px);
+  font-weight: 700;
+  line-height: 1.15;
+  color: #fff;
+  margin: 18px 0 20px;
+  letter-spacing: -0.01em;
+}
+
+.contact-hero-sub {
+  font-size: 16px;
+  line-height: 1.7;
+  color: #a3a3a3;
+  max-width: 440px;
+  margin-bottom: 48px;
+}
+
+.contact-direct-links {
+  display: flex;
+  flex-direction: column;
+}
+
+.contact-direct-link {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  padding: 18px 4px;
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+  transition: padding-left 0.25s ease, box-shadow 0.25s ease;
+}
+
+.contact-direct-links a:last-child {
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.contact-direct-label {
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: #6b6b6b;
+  transition: color 0.25s ease;
+}
+
+.contact-direct-value {
+  font-size: 16px;
+  font-weight: 600;
+  color: #e8e8e8;
+  transition: color 0.25s ease;
+}
+
+.contact-direct-arrow {
+  display: inline-block;
+  transition: transform 0.25s ease;
+}
+
+.contact-direct-link:hover {
+  padding-left: 14px;
+  box-shadow: inset 3px 0 0 var(--color-accent-gold);
+}
+
+.contact-direct-link:hover .contact-direct-label {
+  color: var(--color-accent-gold);
+}
+
+.contact-direct-link:hover .contact-direct-value {
+  color: #fff;
+  text-shadow: 0 0 16px rgba(232, 180, 88, 0.35);
+}
+
+.contact-direct-link:hover .contact-direct-arrow {
+  transform: translateX(4px);
+}
+
+/* ========== RIGHT: FORM ========== */
+.contact-form-sexy {
+  background: rgba(255, 255, 255, 0.02);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 20px;
+  padding: 44px 40px;
+  backdrop-filter: blur(10px);
+  box-shadow: 0 30px 80px rgba(0, 0, 0, 0.35);
+}
+
+.form-field {
+  position: relative;
+  margin-bottom: 34px;
+}
+
+.form-field input,
+.form-field textarea {
+  width: 100%;
+  background: transparent;
+  border: none;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.15);
+  padding: 12px 2px;
+  color: #fff;
+  font-size: 16px;
+  font-family: inherit;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.form-field textarea {
+  resize: vertical;
+  min-height: 90px;
+}
+
+.form-field input:focus,
+.form-field textarea:focus {
+  outline: none;
+  border-color: var(--color-accent-gold);
+  box-shadow: 0 1px 0 0 var(--color-accent-gold), 0 8px 20px -12px rgba(232, 180, 88, 0.5);
+}
+
+.form-field label {
+  position: absolute;
+  left: 2px;
+  top: 12px;
+  color: #6b6b6b;
+  font-size: 16px;
+  pointer-events: none;
+  transition: all 0.2s ease;
+}
+
+.form-field input:focus + label,
+.form-field input:not(:placeholder-shown) + label,
+.form-field textarea:focus + label,
+.form-field textarea:not(:placeholder-shown) + label {
+  top: -14px;
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  color: var(--color-accent-gold);
+}
+
+.contact-submit-btn {
+  width: 100%;
+  justify-content: center;
+  margin-top: 12px;
+  border: none;
+  cursor: pointer;
+}
+
+.contact-sent-note {
+  margin-top: 20px;
+  font-size: 13px;
+  color: var(--color-accent-gold);
+  text-align: center;
+}
+
+/* ========== MOBILE RESPONSIVE ========== */
+@media (max-width: 900px) {
+  .contact-page {
+    padding: 120px 24px 70px 24px;
+  }
+
+  .contact-wrap {
+    grid-template-columns: 1fr;
+    gap: 56px;
+  }
+
+  .contact-hero-sub {
+    max-width: none;
+  }
+
+  .contact-form-sexy {
+    padding: 32px 24px;
+  }
+}

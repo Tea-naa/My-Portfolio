@@ -1,45 +1,46 @@
+// App.js - Main application with routing
+// This sets up navigation between Home, Projects, and About pages
+
 import React from 'react';
-import '@fortawesome/fontawesome-free/css/all.min.css';
-
-import { BrowserRouter as Router, Route, Routes, useLocation } from 'react-router-dom';
-import { CSSTransition, TransitionGroup } from 'react-transition-group';
-import Home from './components/Home.js'; 
-import Projects from './components/Projects.js';
-import Navbar from './components/Navbar.js';
-import Skills from './components/Skills.js';
-import About from './components/About.js';
-import Contact from './components/Contact.js';
-import Badges from './components/Badges.js';
-import Footer from './components/Footer.js';
-import './components/slide.css'; // Import the new slide animation CSS
-
-function AnimatedRoutes() {
-  const location = useLocation(); // useLocation is called inside Router
-
-  return (
-    <TransitionGroup>
-      <CSSTransition key={location.key} classNames="slide" timeout={300}>
-        <div className="content"> {/* Wrapper for page content */}
-          <Routes location={location}>
-            <Route path="/" element={<Home />} />
-            <Route path="/projects" element={<Projects />} />
-            <Route path="/skills" element={<Skills />} />
-            <Route path="/about" element={<About />} />
-            <Route path="/contact" element={<Contact />} />
-            <Route path="/badges" element={<Badges />} />
-          </Routes>
-          <Footer />
-        </div>
-      </CSSTransition>
-    </TransitionGroup>
-  );
-}
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import Navbar from './components/Navbar';
+import Spotlight from './components/Spotlight';
+import CustomCursor from './components/CustomCursor';
+import Home from './components/Home';
+import Projects from './components/Projects';
+import About from './components/About';
+import Contact from './components/Contact';
+import './App.css';
 
 function App() {
   return (
+    // Router wraps everything - enables navigation
     <Router>
-      <Navbar />
-      <AnimatedRoutes />
+      <div className="App">
+        {/* Cursor-reactive glow, the site's one signature interaction */}
+        <Spotlight />
+
+        {/* Small gold dot that replaces the cursor on desktop */}
+        <CustomCursor />
+
+        {/* Navbar appears on every page */}
+        <Navbar />
+
+        {/* Routes define which component shows for each URL */}
+        <Routes>
+          {/* Homepage - shows at "/" */}
+          <Route path="/" element={<Home />} />
+
+          {/* Projects page - shows at "/projects" */}
+          <Route path="/projects" element={<Projects />} />
+
+          {/* About page - shows at "/about" */}
+          <Route path="/about" element={<About />} />
+
+          {/* Contact page - shows at "/contact" */}
+          <Route path="/contact" element={<Contact />} />
+        </Routes>
+      </div>
     </Router>
   );
 }

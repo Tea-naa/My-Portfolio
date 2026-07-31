@@ -1,0 +1,64 @@
+/* CustomCursor.css - gold comet trail + click sparks, desktop only */
+
+.custom-cursor-container {
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 9999;
+}
+
+.cursor-trail-dot {
+  position: fixed;
+  top: 0;
+  left: 0;
+  border-radius: 50%;
+  background: var(--color-accent-gold);
+  box-shadow: 0 0 8px rgba(232, 180, 88, 0.5);
+  transition: background 0.2s ease, box-shadow 0.2s ease;
+  opacity: 0;
+}
+
+body.custom-cursor-active .cursor-trail-dot {
+  opacity: 1;
+}
+
+.cursor-trail-dot.hovering {
+  background: #ffffff;
+  box-shadow: 0 0 16px rgba(232, 180, 88, 0.9);
+}
+
+body.custom-cursor-active,
+body.custom-cursor-active a,
+body.custom-cursor-active button {
+  cursor: none;
+}
+
+.cursor-spark {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 4px;
+  height: 4px;
+  border-radius: 50%;
+  background: var(--color-accent-gold);
+  box-shadow: 0 0 6px rgba(232, 180, 88, 0.8);
+  pointer-events: none;
+  animation: sparkFly 0.55s ease-out forwards;
+}
+
+@keyframes sparkFly {
+  from {
+    transform: translate(-50%, -50%) translate(0, 0);
+    opacity: 1;
+  }
+  to {
+    transform: translate(-50%, -50%) translate(var(--dx), var(--dy));
+    opacity: 0;
+  }
+}
+
+@media (max-width: 900px) {
+  .custom-cursor-container {
+    display: none;
+  }
+}
