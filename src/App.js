@@ -1,8 +1,8 @@
 // App.js - Main application with routing
 // This sets up navigation between Home, Projects, and About pages
 
-import React from 'react';
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import React, { useEffect } from 'react';
+import { BrowserRouter as Router, Routes, Route, useLocation } from 'react-router-dom';
 import Navbar from './components/Navbar';
 import Spotlight from './components/Spotlight';
 import CustomCursor from './components/CustomCursor';
@@ -12,11 +12,26 @@ import About from './components/About';
 import Contact from './components/Contact';
 import './App.css';
 
+// React Router doesn't reset scroll position on navigation by default, so
+// clicking a nav link could land you mid-page (wherever the previous page
+// happened to be scrolled to). This resets to the top on every route change.
+function ScrollToTop() {
+  const { pathname } = useLocation();
+
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, [pathname]);
+
+  return null;
+}
+
 function App() {
   return (
     // Router wraps everything - enables navigation
     <Router>
       <div className="App">
+        <ScrollToTop />
+
         {/* Cursor-reactive glow, the site's one signature interaction */}
         <Spotlight />
 
