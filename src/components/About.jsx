@@ -195,24 +195,6 @@ function About() {
             </div>
           </Reveal>
 
-          {/* CONTACT */}
-          <Reveal delay={240}>
-            <div className="about-contact">
-              <h2 className="contact-title">Let's Connect</h2>
-              <div className="contact-links">
-                <a href="mailto:TinaMarie.Bajwa@gmail.com">TinaMarie.Bajwa@gmail.com</a>
-                <a href="https://www.linkedin.com/in/tina-bajwa/" target="_blank" rel="noopener noreferrer">
-                  LinkedIn
-                </a>
-                <a href="https://github.com/Tea-naa" target="_blank" rel="noopener noreferrer">
-                  GitHub
-                </a>
-                <a href="/resume.pdf" target="_blank" rel="noopener noreferrer">
-                  Download Resume
-                </a>
-              </div>
-            </div>
-          </Reveal>
         </div>
 
       </div>
