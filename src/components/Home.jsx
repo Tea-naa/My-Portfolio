@@ -236,7 +236,10 @@ const featuredProjects = [
     company: "Personal Project",
     tech: ["React", "Node.js", "MongoDB", "Docker", "Kubernetes"],
     href: "https://github.com/Tea-naa/tiptrack",
-    images: ["/projects/tiptrack-dashboard.jpg", "/projects/tiptrack-tax.jpg"],
+    images: [
+      { src: "/projects/tiptrack-dashboard.jpg", ratio: 1.48 },
+      { src: "/projects/tiptrack-tax.jpg", ratio: 0.518 },
+    ],
     frameLabel: "TipTrack",
   },
   {
@@ -245,7 +248,7 @@ const featuredProjects = [
     company: "SuppliFlex",
     tech: ["Terraform", "AWS", "OAuth 2.0", "NestJS"],
     href: "https://www.suppliflex.tech/",
-    images: ["/projects/suppliflex-site.jpg"],
+    images: [{ src: "/projects/suppliflex-site.jpg", ratio: 1.627 }],
     frameLabel: "suppliflex.tech",
   },
   {
@@ -254,7 +257,7 @@ const featuredProjects = [
     company: "Addteq",
     tech: ["Terraform", "Ansible", "MySQL", "SSL"],
     href: "https://addteq.com/",
-    images: ["/projects/addteq-site.jpg"],
+    images: [{ src: "/projects/addteq-site.jpg", ratio: 1.513 }],
     frameLabel: "addteq.com",
   },
   {
@@ -263,7 +266,10 @@ const featuredProjects = [
     company: "Bootcamp Project",
     tech: ["Node.js", "Express", "MySQL", "REST API"],
     href: "https://github.com/Tea-naa/Project-4",
-    images: ["/projects/quiz-login.jpg", "/projects/quiz-2.jpg"],
+    images: [
+      { src: "/projects/quiz-login.jpg", ratio: 0.706 },
+      { src: "/projects/quiz-2.jpg", ratio: 0.713 },
+    ],
     frameLabel: "Killer Knowledge Quiz",
   },
   {
@@ -272,7 +278,7 @@ const featuredProjects = [
     company: "Personal Project",
     tech: ["React", "JavaScript", "CSS"],
     href: "https://github.com/Tea-naa/language-learning-flashcards",
-    images: ["/projects/flashcards.jpg"],
+    images: [{ src: "/projects/flashcards.jpg", ratio: 0.895 }],
     frameLabel: "Language Flashcards",
   },
   {
@@ -281,7 +287,7 @@ const featuredProjects = [
     company: "Bootcamp Project",
     tech: ["React", "Node.js", "Express"],
     href: "https://github.com/Tea-naa/Project-3",
-    images: ["/projects/todo-list.jpg"],
+    images: [{ src: "/projects/todo-list.jpg", ratio: 0.683 }],
     frameLabel: "To-do List App",
   },
   {
@@ -290,7 +296,7 @@ const featuredProjects = [
     company: "Bootcamp Project",
     tech: ["HTML", "CSS", "Bootstrap"],
     href: "https://github.com/Tea-naa/Animal-Adoption-Website",
-    images: ["/projects/animal-adoption.jpg"],
+    images: [{ src: "/projects/animal-adoption.jpg", ratio: 0.888 }],
     frameLabel: "Animal Adoption",
   },
   {
@@ -299,7 +305,7 @@ const featuredProjects = [
     company: "Bootcamp Project",
     tech: ["HTML", "CSS", "JavaScript", "Giphy API"],
     href: "https://github.com/Tea-naa/Project_2",
-    images: ["/projects/giphy-search.jpg"],
+    images: [{ src: "/projects/giphy-search.jpg", ratio: 1.34 }],
     frameLabel: "Giphy Search",
   },
 ];

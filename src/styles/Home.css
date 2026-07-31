@@ -299,7 +299,11 @@ a.work-row-active {
 }
 
 .work-preview-frame {
-  aspect-ratio: 4 / 3;
+  height: 340px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
   animation: workPreviewFade 0.4s ease;
 }
 
@@ -519,7 +523,7 @@ a.work-row:hover .work-arrow {
   }
 
   .work-preview-frame {
-    aspect-ratio: 16 / 10;
+    height: 280px;
   }
 }
 

@@ -3,18 +3,28 @@
 // a native app - this stays honest while still giving screenshots a
 // polished, consistent "device frame" treatment.
 //
-// Accepts either a single `src`, or an `images` array to show a small
-// gallery (dot nav + prev/next arrows) when a project has more than one
-// real screenshot worth showing.
+// Each screenshot is framed at ITS OWN real aspect ratio (landscape desktop
+// shots stay wide, portrait/mobile shots stay narrow) instead of being
+// force-fit into one fixed box - that's what avoids cropping content AND
+// avoids ugly empty letterbox bars around mismatched screenshots.
+//
+// Accepts either a single `src`/`ratio`, or an `images` array of
+// { src, ratio } objects to show a small gallery (dot nav + prev/next
+// arrows) when a project has more than one real screenshot worth showing.
 
 import React, { useState } from 'react';
 import '../styles/BrowserFrame.css';
 
-function BrowserFrame({ src, images, alt, label, onClick, className = '' }) {
-  const imgs = images && images.length ? images : (src ? [src] : []);
+const FALLBACK_RATIO = 4 / 3;
+
+function BrowserFrame({ src, ratio, images, alt, label, onClick, className = '' }) {
+  const imgs = images && images.length
+    ? images
+    : (src ? [{ src, ratio: ratio || FALLBACK_RATIO }] : []);
+
   const [index, setIndex] = useState(0);
   const hasMultiple = imgs.length > 1;
-  const current = imgs[index];
+  const current = imgs[index] || {};
 
   const goPrev = (e) => {
     e.stopPropagation();
@@ -34,7 +44,7 @@ function BrowserFrame({ src, images, alt, label, onClick, className = '' }) {
   return (
     <div
       className={`browser-frame ${className}`}
-      onClick={onClick ? () => onClick(current) : undefined}
+      onClick={onClick ? () => onClick(current.src) : undefined}
       role={onClick ? 'button' : undefined}
       tabIndex={onClick ? 0 : undefined}
     >
@@ -44,8 +54,11 @@ function BrowserFrame({ src, images, alt, label, onClick, className = '' }) {
         <span className="browser-frame-dot dot-green" />
         {label && <span className="browser-frame-url">{label}</span>}
       </div>
-      <div className="browser-frame-body">
-        <img src={current} alt={alt} />
+      <div
+        className="browser-frame-body"
+        style={{ aspectRatio: current.ratio || FALLBACK_RATIO }}
+      >
+        <img src={current.src} alt={alt} />
 
         {hasMultiple && (
           <>
@@ -68,7 +81,7 @@ function BrowserFrame({ src, images, alt, label, onClick, className = '' }) {
             <div className="browser-frame-dots">
               {imgs.map((img, i) => (
                 <span
-                  key={img}
+                  key={img.src}
                   className={`browser-frame-dot-nav${i === index ? ' active' : ''}`}
                   onClick={(e) => goTo(e, i)}
                 />

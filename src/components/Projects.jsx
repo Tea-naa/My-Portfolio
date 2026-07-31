@@ -17,7 +17,10 @@ const featured = [
     tech: ["React", "Node.js", "Express.js", "MongoDB", "Docker", "Kubernetes", "Minikube", "PVCs", "Nginx", "JWT"],
     link: "https://github.com/Tea-naa/tiptrack",
     linkLabel: "View on GitHub",
-    images: ["/projects/tiptrack-dashboard.jpg", "/projects/tiptrack-tax.jpg"],
+    images: [
+      { src: "/projects/tiptrack-dashboard.jpg", ratio: 1.48 },
+      { src: "/projects/tiptrack-tax.jpg", ratio: 0.518 },
+    ],
     frameLabel: "TipTrack",
   },
   {
@@ -28,7 +31,7 @@ const featured = [
     tech: ["Terraform", "AWS Cognito", "IAM", "Amazon Connect", "S3", "CloudFront", "Route 53", "WorkMail", "OAuth 2.0", "Amazon SP-API", "NestJS", "TypeScript", "React"],
     link: "https://www.suppliflex.tech/",
     linkLabel: "Visit suppliflex.tech",
-    images: ["/projects/suppliflex-site.jpg"],
+    images: [{ src: "/projects/suppliflex-site.jpg", ratio: 1.627 }],
     frameLabel: "suppliflex.tech",
   },
   {
@@ -39,7 +42,7 @@ const featured = [
     tech: ["Terraform", "Ansible", "DigitalOcean", "MySQL", "Apache", "SSL", "Load Balancer"],
     link: "https://addteq.com/",
     linkLabel: "Visit addteq.com",
-    images: ["/projects/addteq-site.jpg"],
+    images: [{ src: "/projects/addteq-site.jpg", ratio: 1.513 }],
     frameLabel: "addteq.com",
   },
 ];
@@ -50,7 +53,10 @@ const more = [
     company: "Bootcamp Project",
     tech: ["Node.js", "Express", "MySQL", "REST API"],
     github: "https://github.com/Tea-naa/Project-4",
-    images: ["/projects/quiz-login.jpg", "/projects/quiz-2.jpg"],
+    images: [
+      { src: "/projects/quiz-login.jpg", ratio: 0.706 },
+      { src: "/projects/quiz-2.jpg", ratio: 0.713 },
+    ],
     frameLabel: "Killer Knowledge Quiz",
   },
   {
@@ -58,7 +64,7 @@ const more = [
     company: "Personal Project",
     tech: ["React", "JavaScript", "CSS"],
     github: "https://github.com/Tea-naa/language-learning-flashcards",
-    images: ["/projects/flashcards.jpg"],
+    images: [{ src: "/projects/flashcards.jpg", ratio: 0.895 }],
     frameLabel: "Language Flashcards",
   },
   {
@@ -66,7 +72,7 @@ const more = [
     company: "Bootcamp Project",
     tech: ["React", "Node.js", "Express"],
     github: "https://github.com/Tea-naa/Project-3",
-    images: ["/projects/todo-list.jpg"],
+    images: [{ src: "/projects/todo-list.jpg", ratio: 0.683 }],
     frameLabel: "To-do List App",
   },
   {
@@ -74,7 +80,7 @@ const more = [
     company: "Bootcamp Project",
     tech: ["HTML", "CSS", "Bootstrap"],
     github: "https://github.com/Tea-naa/Animal-Adoption-Website",
-    images: ["/projects/animal-adoption.jpg"],
+    images: [{ src: "/projects/animal-adoption.jpg", ratio: 0.888 }],
     frameLabel: "Animal Adoption",
   },
   {
@@ -82,7 +88,7 @@ const more = [
     company: "Bootcamp Project",
     tech: ["HTML", "CSS", "JavaScript", "Giphy API"],
     github: "https://github.com/Tea-naa/Project_2",
-    images: ["/projects/giphy-search.jpg"],
+    images: [{ src: "/projects/giphy-search.jpg", ratio: 1.34 }],
     frameLabel: "Giphy Search",
   }
 ];
